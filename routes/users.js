@@ -44,20 +44,29 @@ Route.route('/getUserById').get((req, res) => {
 
 
 // Update user
-Route.route('/updateUserById').put((req, res, next) => {
-    const { id, gender, rank } = req.body;
-    if (!id || !gender || !rank) {
+Route.route('/updateUserById').put((req, res) => {
+    const { id, name, valorant_id, valorant_name, rank, gender } = req.body.data;
+    console.log(req.body.data);
+    if (!id || !name || !valorant_id, !valorant_name) {
         res.status(400).send('Dữ liệu không hợp lệ');
     }
-    
 
     UserSchema.findById(id,
         function (err, user) {
             if (!err) {
-                // 2: Edit
-                user.gender = gender;
-                user.rank = rank;
-                // 3: Save
+                console.log()
+                user.name = name;
+                user.valorant_id = valorant_id;
+                user.valorant_name = valorant_name;
+
+                if (rank) {
+                    user.rank = rank;
+                }
+
+                if (gender) {
+                    user.gender = gender;
+                }
+
                 user.save(function (err, user) {
                     if (err) {
                         console.log(err);

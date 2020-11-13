@@ -9,6 +9,8 @@ const userSchema = new mongoose.Schema({
         default: 'none'
     },
     avatar: String,
+    valorant_id: String,
+    valorant_name: String,
     rank: {
         type: String,
         enum : ['none', 'iron', 'bronze', 'silver', 'gold', 'platinum', 'diamond', 'immortal', 'radiant'],
