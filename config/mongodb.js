@@ -3,7 +3,8 @@ const Mongodb = function () {
     // Connecting mongoDB
     mongoose.Promise = global.Promise;
     mongoose.connect(process.env.URL_DB, {
-        useNewUrlParser: true
+        useNewUrlParser: true,
+        useUnifiedTopology: true
     }).then(() => {
         console.log('Database connected');
     },
