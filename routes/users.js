@@ -1,9 +1,13 @@
 const express = require('express');
 const app = express();
-
+const path = require('path');
 
 // Express route
 const Route = express.Router();
+// mdw
+const upload = require('../middleware/upload');
+
+const Resize = require('../config/resize');
 
 // User schema
 let UserSchema = require('../models/user');
@@ -33,7 +37,8 @@ Route.route('/createUsers').post((req, res, next) => {
 
 // Get single user
 Route.route('/getUserById').get((req, res) => {
-    UserSchema.findById(req.query.id, (error, data) => {
+    const { _id } = res.locals.user;
+    UserSchema.findById(_id, (error, data) => {
         if (error) {
             return next(error)
         } else {
@@ -45,16 +50,15 @@ Route.route('/getUserById').get((req, res) => {
 
 // Update user
 Route.route('/updateUserById').put((req, res) => {
-    const { id, name, valorant_id, valorant_name, rank, gender } = req.body.data;
-    console.log(req.body.data);
-    if (!id || !name || !valorant_id, !valorant_name) {
+    const { name, valorant_id, valorant_name, rank, gender } = req.body.data;
+    const { _id } = res.locals.user;
+    if (!name || !valorant_id, !valorant_name) {
         res.status(400).send('Dữ liệu không hợp lệ');
     }
 
-    UserSchema.findById(id,
+    UserSchema.findById(_id,
         function (err, user) {
             if (!err) {
-                console.log()
                 user.name = name;
                 user.valorant_id = valorant_id;
                 user.valorant_name = valorant_name;
@@ -84,6 +88,28 @@ Route.route('/updateUserById').put((req, res) => {
         }
     );
 })
+
+
+Route.post("/uploadAvatar", upload.single('image'), async function (req, res) {
+
+    const { _id } = res.locals.user;
+
+    // folder upload
+    const imagePath = path.join(__dirname, '../public/upload');
+    // call class Resize
+    const fileUpload = new Resize(imagePath);
+    if (!req.file) {
+        res.status(400).send('Dữ liệu không hợp lệ');
+    }
+    const filename = await fileUpload.save(req.file.buffer);
+
+
+    const user = await UserSchema.findById(_id);
+    user.avatar = filename;
+    user.save();
+    res.status(200).send('Cập nhật thành công');
+})
+
 
 // // Delete student
 // expressRoute.route('/remove-student/:id').delete((req, res, next) => {

@@ -27,7 +27,7 @@ ConfigMongodb();
 const authenticateToken = require('./middleware/auth');
 const userRoute = require('./routes/users');
 const authRoute = require('./routes/auth');
-app.use('/api', userRoute);
+app.use('/api',authenticateToken, userRoute );
 app.use('/', authRoute);
 
 // Create port
