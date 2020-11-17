@@ -93,7 +93,6 @@ Route.route('/updateUserById').put((req, res) => {
 Route.post("/uploadAvatar", upload.single('image'), async function (req, res) {
 
     const { _id } = res.locals.user;
-
     // folder upload
     const imagePath = path.join(__dirname, '../public/upload');
     // call class Resize
@@ -101,6 +100,7 @@ Route.post("/uploadAvatar", upload.single('image'), async function (req, res) {
     if (!req.file) {
         res.status(400).send('Dữ liệu không hợp lệ');
     }
+
     const filename = await fileUpload.save(req.file.buffer);
 
 

@@ -30,6 +30,9 @@ const authRoute = require('./routes/auth');
 app.use('/api',authenticateToken, userRoute );
 app.use('/', authRoute);
 
+
+app.use('/upload', express.static('public/upload'));
+
 // Create port
 const port = process.env.PORT || 8080;
 
