@@ -5,7 +5,7 @@ const userSchema = new mongoose.Schema({
     facebook_id: String,
     gender: {
         type: String,
-        enum : ['none', 'male', 'female'], 
+        enum: ['none', 'male', 'female'],
         default: 'none'
     },
     avatar: String,
@@ -13,10 +13,10 @@ const userSchema = new mongoose.Schema({
     valorant_name: String,
     rank: {
         type: String,
-        enum : ['none', 'iron', 'bronze', 'silver', 'gold', 'platinum', 'diamond', 'immortal', 'radiant'],
+        enum: ['none', 'iron', 'bronze', 'silver', 'gold', 'platinum', 'diamond', 'immortal', 'radiant'],
         default: 'none'
     }
 });
 
 const userModel = mongoose.model("User", userSchema);
-module.exports = userModel;
+module.exports = { userSchema, userModel };

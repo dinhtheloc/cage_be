@@ -10,10 +10,10 @@ const upload = require('../middleware/upload');
 const Resize = require('../config/resize');
 
 // User schema
-let UserSchema = require('../models/user');
+let { userModel } = require('../models/user');
 
 Route.get("/getUsers", (req, res) => {
-    UserSchema.find((error, data) => {
+    userModel.find((error, data) => {
         if (error) {
             return next(error)
         } else {
@@ -25,7 +25,7 @@ Route.get("/getUsers", (req, res) => {
 
 // Create user
 Route.route('/createUsers').post((req, res, next) => {
-    UserSchema.create(req.body, (error, data) => {
+    userModel.create(req.body, (error, data) => {
         if (error) {
             return next(error)
         } else {
@@ -38,7 +38,7 @@ Route.route('/createUsers').post((req, res, next) => {
 // Get single user
 Route.route('/getUserById').get((req, res) => {
     const { _id } = res.locals.user;
-    UserSchema.findById(_id, (error, data) => {
+    userModel.findById(_id, (error, data) => {
         if (error) {
             return next(error)
         } else {
@@ -54,9 +54,10 @@ Route.route('/updateUserById').put((req, res) => {
     const { _id } = res.locals.user;
     if (!name || !valorant_id, !valorant_name) {
         res.status(400).send('Dữ liệu không hợp lệ');
+        return;
     }
 
-    UserSchema.findById(_id,
+    userModel.findById(_id,
         function (err, user) {
             if (!err) {
                 user.name = name;
@@ -73,15 +74,12 @@ Route.route('/updateUserById').put((req, res) => {
 
                 user.save(function (err, user) {
                     if (err) {
-                        console.log(err);
-                        res.status(400).send('Dữ liệu không hợp lệ');
+                        res.status(500).send('Hệ thống gặp lỗi');
                         return;
                     }
-                    console.log('User saved: ' + user);
                     res.status(200).send('Cập nhật thành công');
                 });
             } else {
-                console.log(err);
                 res.status(500).send('Hệ thống gặp lỗi');
                 return;
             }
@@ -104,7 +102,7 @@ Route.post("/uploadAvatar", upload.single('image'), async function (req, res) {
     const filename = await fileUpload.save(req.file.buffer);
 
 
-    const user = await UserSchema.findById(_id);
+    const user = await userModel.findById(_id);
     user.avatar = filename;
     user.save();
     res.status(200).send('Cập nhật thành công');
@@ -113,7 +111,7 @@ Route.post("/uploadAvatar", upload.single('image'), async function (req, res) {
 
 // // Delete student
 // expressRoute.route('/remove-student/:id').delete((req, res, next) => {
-//     UserSchema.findByIdAndRemove(req.params.id, (error, data) => {
+//     userModel.findByIdAndRemove(req.params.id, (error, data) => {
 //         if (error) {
 //             return next(error);
 //         } else {

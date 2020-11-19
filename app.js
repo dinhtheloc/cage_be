@@ -39,17 +39,11 @@ ConfigSocketChat(io);
 // Api root
 const authenticateToken = require('./middleware/auth');
 const userRoute = require('./routes/users');
+const postRoute = require('./routes/posts');
 const authRoute = require('./routes/auth');
 app.use('/api', authenticateToken, userRoute);
+app.use('/api', authenticateToken, postRoute);
 app.use('/', authRoute);
 app.use('/upload', express.static('public/upload'));
-
-// Conectting port
-
-// app.listen(process.env.PORT || 8080, () => {
-//     console.log('Port connected to: ' + process.env.PORT || 8080)
-// });
-
-
 
 server.listen(process.env.PORT || 8080, () => console.log(`Server has started.`));
