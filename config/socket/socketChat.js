@@ -1,38 +1,37 @@
-const { addUser, removeUser, getUser, getUsersInRoom } = require('./users');
+const { addMessage, getMessages } = require('./messages');
 
 const ConfigSocketChat = (io) => {
     io.on('connect', (socket) => {
-        socket.on('join', ({ name, room }, callback) => {
-            const { error, user } = addUser({ id: socket.id, name, room });
+        socket.on('join', async ({ roomId }, callback) => {
+            socket.join(roomId);
 
-            if (error) return callback(error);
+            const messages = await getMessages(roomId);
+            io.to(`${socket.id}`).emit('getData', { messages });
+        });
 
-            socket.join(user.room);
+        socket.on('sendMessage', (data, callback) => {
+            const { message, roomId, user } = data;
 
-            socket.emit('message', { user: 'admin', text: `${user.name}, welcome to room ${user.room}.` });
-            socket.broadcast.to(user.room).emit('message', { user: 'admin', text: `${user.name} has joined!` });
+            const time = new Date();
 
-            io.to(user.room).emit('roomData', { room: user.room, users: getUsersInRoom(user.room) });
+            const dataCreate = {
+                time, message, avatar: user.avatar, name: user.name, roomId, userId: user.facebook_id
+            };
+            addMessage(dataCreate);
+
+            io.to(roomId).emit('message', { ...dataCreate });
 
             callback();
         });
 
-        socket.on('sendMessage', (message, callback) => {
-            const user = getUser(socket.id);
+        // socket.on('disconnect', () => {
+        //     const user = removeUser(socket.id);
 
-            io.to(user.room).emit('message', { user: user.name, text: message });
-
-            callback();
-        });
-
-        socket.on('disconnect', () => {
-            const user = removeUser(socket.id);
-
-            if (user) {
-                io.to(user.room).emit('message', { user: 'Admin', text: `${user.name} has left.` });
-                io.to(user.room).emit('roomData', { room: user.room, users: getUsersInRoom(user.room) });
-            }
-        })
+        //     if (user) {
+        //         io.to(user.room).emit('message', { user: 'Admin', text: `${user.name} has left.` });
+        //         io.to(user.room).emit('roomData', { room: user.room, users: getUsersInRoom(user.room) });
+        //     }
+        // })
     });
 }
 

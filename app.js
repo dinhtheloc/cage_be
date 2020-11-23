@@ -41,8 +41,9 @@ const authenticateToken = require('./middleware/auth');
 const userRoute = require('./routes/users');
 const postRoute = require('./routes/posts');
 const authRoute = require('./routes/auth');
-app.use('/api', authenticateToken, userRoute);
-app.use('/api', authenticateToken, postRoute);
+app.use('/api', authenticateToken, [userRoute, postRoute]);
+// app.use('/api', authenticateToken, postRoute);
+// app.use('/api', authenticateToken, messageRoute);
 app.use('/', authRoute);
 app.use('/upload', express.static('public/upload'));
 

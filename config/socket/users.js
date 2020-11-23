@@ -6,20 +6,22 @@ const addUser = ({ id, name, room }) => {
 
   const existingUser = users.find((user) => user.room === room && user.name === name);
 
-  if(!name || !room) return { error: 'Username and room are required.' };
-  if(existingUser) return { error: 'Username is taken.' };
-
+  if (!name || !room) return { error: 'Username and room are required.' };
   const user = { id, name, room };
-
-  users.push(user);
-
-  return { user };
+  let isExisting = null;
+  if (existingUser) {
+    isExisting = true;
+  } else {
+    users.push(user);
+    isExisting = false;
+  }
+  return { user, isExisting };
 }
 
 const removeUser = (id) => {
   const index = users.findIndex((user) => user.id === id);
 
-  if(index !== -1) return users.splice(index, 1)[0];
+  if (index !== -1) return users.splice(index, 1)[0];
 }
 
 const getUser = (id) => users.find((user) => user.id === id);

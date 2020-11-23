@@ -2,11 +2,22 @@ const express = require('express');
 const Route = express.Router();
 const {removeProperty} = require('../utilities/helper');
 
-let PostSchema = require('../models/post');
+let post = require('../models/post');
+
+
+Route.get("/getPosts", (req, res) => {
+    post.find((error, data) => {
+        if (error) {
+            return next(error)
+        } else {
+            res.json(data)
+        }
+    })
+});
+
 
 // Create user
 Route.route('/createPost').post((req, res, next) => {
-
     const { title, rank, slot, description } = req.body;
 
     if (!title && !rank && !slot && !description) {
@@ -16,13 +27,13 @@ Route.route('/createPost').post((req, res, next) => {
 
     const user = res.locals.user;
 
-    const createDate = new Date();
+    const createDate = new Date().now();
 
     const data = {
         title, rank, slot, description, user, createDate
     };
 
-    PostSchema.create({...data}, (error, data) => {
+    post.create({...data}, (error, data) => {
         if (error) {
             res.status(500).send('Hệ thống gặp lỗi');
             return;
