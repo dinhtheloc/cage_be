@@ -1,12 +1,11 @@
 const jwt = require("jsonwebtoken");
 
 const CallbackLoginFacebook = (req, res) => {
-    console.log('redirected', req.user)
     const { user } = req;
     let token = jwt.sign({
         data: user
-    }, process.env.SECRET_TOKEN, { expiresIn: '1d' }); // expiry in seconds
-    res.redirect(`http://localhost:3000/login-callback?token=${token}`);
+    }, process.env.SECRET_TOKEN, { expiresIn: '1d' });
+    res.redirect(`${process.env.URL_REDIRECT_CLIENT_LOGIN}?token=${token}`);
 };
 
 

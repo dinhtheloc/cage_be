@@ -1,27 +1,36 @@
-const { addMessage, getMessages } = require('./messages');
+// const { addMessage, getMessages } = require('./messages');
+
+const { findRoomchat, addMessage } = require('../../controllers/roomChat');
+const { findUserByFacebookId } = require('../../controllers/user');
 
 const ConfigSocketChat = (io) => {
-    io.on('connect', (socket) => {
-        socket.on('join', async ({ roomId }, callback) => {
-            socket.join(roomId);
+    io.on('connection', (socket) => {
 
-            const messages = await getMessages(roomId);
-            io.to(`${socket.id}`).emit('getData', { messages });
+        socket.on('join', async ({ arrayUserIds, facebook_id }, callback) => {
+            const roomChat = await findRoomchat(arrayUserIds);
+            const user = await findUserByFacebookId(facebook_id);
+            const { _id, messages } = roomChat;
+            console.log(_id);
+            socket.join(String(_id));
+
+            
+            io.to(socket.id).emit('getData', { messages, roomId: _id, user });
         });
 
         socket.on('sendMessage', (data, callback) => {
             const { message, roomId, user } = data;
-
             const time = new Date();
 
             const dataCreate = {
-                time, message, avatar: user.avatar, name: user.name, roomId, userId: user.facebook_id
+                roomId,
+                time,
+                message,
+                avatar: user.avatar,
+                name: user.name,
+                userId: user.facebook_id
             };
             addMessage(dataCreate);
-
-            io.to(roomId).emit('message', { ...dataCreate });
-
-            callback();
+            io.in(String(dataCreate.roomId)).emit('message', dataCreate);
         });
 
         // socket.on('disconnect', () => {

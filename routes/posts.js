@@ -5,14 +5,32 @@ const {removeProperty} = require('../utilities/helper');
 let post = require('../models/post');
 
 
-Route.get("/getPosts", (req, res) => {
-    post.find((error, data) => {
-        if (error) {
-            return next(error)
-        } else {
-            res.json(data)
-        }
-    })
+Route.get("/getPosts", async (req, res) => {
+
+    
+
+    const { pageIndex = 1, pageSize = 1 } = req.query;
+
+    try {
+        // execute query with page and limit values
+        const posts = await post.find()
+          .limit(pageSize * 1)
+          .skip((pageIndex - 1) * pageSize)
+          .exec();
+    
+        // get total documents in the Posts collection 
+        const count = await post.countDocuments();
+    
+        // return response with posts, total pages, and current page
+        res.json({
+          posts,
+          count,
+          totalPages: Math.ceil(count / pageSize),
+          pageIndex
+        });
+      } catch (err) {
+        console.error(err.message);
+      }
 });
 
 
@@ -27,7 +45,7 @@ Route.route('/createPost').post((req, res, next) => {
 
     const user = res.locals.user;
 
-    const createDate = new Date().now();
+    const createDate = new Date();
 
     const data = {
         title, rank, slot, description, user, createDate

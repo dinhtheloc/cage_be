@@ -9,5 +9,5 @@ const messageSchema = new mongoose.Schema({
     userId: String
 });
 
-const message = mongoose.model("Message", messageSchema);
-module.exports = message;
+const messageModel = mongoose.model("Message", messageSchema);
+module.exports = { messageSchema, messageModel };
