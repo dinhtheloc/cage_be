@@ -12,12 +12,10 @@ const ConfigSocketChat = (io) => {
             const { _id, messages } = roomChat;
             console.log(_id);
             socket.join(String(_id));
-
-            
             io.to(socket.id).emit('getData', { messages, roomId: _id, user });
         });
 
-        socket.on('sendMessage', (data, callback) => {
+        socket.on('sendMessage', async (data, callback) => {
             const { message, roomId, user } = data;
             const time = new Date();
 
@@ -29,11 +27,12 @@ const ConfigSocketChat = (io) => {
                 name: user.name,
                 userId: user.facebook_id
             };
-            addMessage(dataCreate);
+            const {fbId, notifications} = await addMessage(dataCreate);
             io.in(String(dataCreate.roomId)).emit('message', dataCreate);
+            io.in(String(`${fbId}_notifications`)).emit('notifications', notifications);
         });
 
-        // socket.on('disconnect', () => {
+        // socket.on('notifications', () => {
         //     const user = removeUser(socket.id);
 
         //     if (user) {

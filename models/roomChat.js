@@ -10,6 +10,13 @@ const roomChatSchema = new mongoose.Schema({
     messages: {
         type: messageSchema,
         default: []
+    },
+    lastMessages: {
+        message: String,
+        userId: String,    
+        name: String,
+        avatar: String,
+        hasRead: Boolean
     }
 });
 
