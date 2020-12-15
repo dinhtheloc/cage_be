@@ -1,16 +1,19 @@
 // const { addMessage, getMessages } = require('./messages');
 
-const { findRoomchat, addMessage } = require('../../controllers/roomChat');
+const { findRoomchat, addMessage, getNotifications } = require('../../controllers/roomChat');
 const { findUserByFacebookId } = require('../../controllers/user');
 
 const ConfigSocketChat = (io) => {
     io.on('connection', (socket) => {
 
         socket.on('join', async ({ arrayUserIds, facebook_id }, callback) => {
+            if (arrayUserIds[0] === arrayUserIds[1]) { 
+                callback({status: "Error: duplicate facebook id"});
+                return;
+            }
             const roomChat = await findRoomchat(arrayUserIds);
             const user = await findUserByFacebookId(facebook_id);
             const { _id, messages } = roomChat;
-            console.log(_id);
             socket.join(String(_id));
             io.to(socket.id).emit('getData', { messages, roomId: _id, user });
         });
@@ -30,6 +33,12 @@ const ConfigSocketChat = (io) => {
             const {fbId, notifications} = await addMessage(dataCreate);
             io.in(String(dataCreate.roomId)).emit('message', dataCreate);
             io.in(String(`${fbId}_notifications`)).emit('notifications', notifications);
+        });
+
+        socket.on('joinNotification', async ({ facebook_id }, callback) => {
+            const notifications = await getNotifications(facebook_id);
+            socket.join(String(`${facebook_id}_notifications`));
+            io.to(socket.id).emit('getNotifications', { notifications });
         });
 
         // socket.on('notifications', () => {

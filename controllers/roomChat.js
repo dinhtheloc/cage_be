@@ -2,8 +2,10 @@ const roomChatModel = require('../models/roomChat');
 
 const findRoomchat = (arrayUserIds) => {
     return new Promise(async resolve => {
-        const roomChat = await roomChatModel.findOne({ arrayUserIds: { $in: arrayUserIds } }).exec();
+        const roomChat = await roomChatModel.findOne({ arrayUserIds: { $all: arrayUserIds } }).exec();
 
+        console.log('arrayUserIds', arrayUserIds);
+        console.log('roomChat', roomChat);
         if (roomChat) {
             resolve(roomChat);
         } else {
@@ -27,7 +29,8 @@ const addMessage = ({ roomId, time, message, avatar, name, userId }) => {
             userId: userId,
             name: name,
             avatar: avatar,
-            hasRead: false
+            hasRead: false,
+            time: time
         }
 
         let fbId = '';
@@ -40,13 +43,29 @@ const addMessage = ({ roomId, time, message, avatar, name, userId }) => {
             }
         }
 
-        const notifications =  await roomChatModel.find({ arrayUserIds: fbId });
+        const notifications = await roomChatModel.find({ arrayUserIds: fbId });
         roomChat.save();
-        resolve({fbId, notifications});
+        resolve({ fbId, notifications });
     });
+}
+
+const getNotifications = (facebook_id) => {
+    return new Promise(async resolve => {
+        const notifications = await roomChatModel.find({
+            $and: [
+                {
+                    arrayUserIds: facebook_id
+                },
+                {
+                    lastMessages: {$exists: true}
+                }
+            ]
+        });
+        resolve(notifications);
+    })
 }
 
 
 
 
-module.exports = { findRoomchat, addMessage };
+module.exports = { findRoomchat, addMessage, getNotifications };

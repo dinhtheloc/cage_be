@@ -16,7 +16,8 @@ const roomChatSchema = new mongoose.Schema({
         userId: String,    
         name: String,
         avatar: String,
-        hasRead: Boolean
+        hasRead: Boolean,
+        time: Date
     }
 });
 
