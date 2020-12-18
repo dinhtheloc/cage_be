@@ -3,10 +3,12 @@ const roomChatModel = require('../models/roomChat');
 const findRoomchat = (arrayUserIds) => {
     return new Promise(async resolve => {
         const roomChat = await roomChatModel.findOne({ arrayUserIds: { $all: arrayUserIds } }).exec();
-
-        console.log('arrayUserIds', arrayUserIds);
-        console.log('roomChat', roomChat);
         if (roomChat) {
+
+            if (arrayUserIds[0] !== roomChat.lastMessages.userId && !roomChat.lastMessages.hasRead) {
+                roomChat.lastMessages.hasRead = true;
+                roomChat.save();
+            }
             resolve(roomChat);
         } else {
             const object = {
@@ -33,19 +35,31 @@ const addMessage = ({ roomId, time, message, avatar, name, userId }) => {
             time: time
         }
 
-        let fbId = '';
+        roomChat.updateTime = new Date;
+
+        await roomChat.save();
+
+        let fbIdSend = '';
+        let fbIdReciever = '';
 
         if (roomChat.arrayUserIds.length === 2) {
             if (roomChat.arrayUserIds[0] === userId) {
-                fbId = roomChat.arrayUserIds[1];
+                fbIdSend = roomChat.arrayUserIds[1];
+                fbIdReciever = roomChat.arrayUserIds[0];
             } else {
-                fbId = roomChat.arrayUserIds[0];
+                fbIdReciever = roomChat.arrayUserIds[1];
+                fbIdSend = roomChat.arrayUserIds[0];
             }
         }
 
-        const notifications = await roomChatModel.find({ arrayUserIds: fbId });
-        roomChat.save();
-        resolve({ fbId, notifications });
+        const notificationsSend = await getNotifications(fbIdSend);
+        const counSend = await countNotifications(fbIdSend);
+
+        const notificationsReciever = await getNotifications(fbIdReciever);
+        const countReciever = await countNotifications(fbIdReciever);
+
+
+        resolve({ fbIdSend, fbIdReciever, notificationsReciever, countReciever, notificationsSend, counSend });
     });
 }
 
@@ -57,15 +71,39 @@ const getNotifications = (facebook_id) => {
                     arrayUserIds: facebook_id
                 },
                 {
-                    lastMessages: {$exists: true}
+                    lastMessages: { $exists: true }
+                }
+            ]
+        }).sort({ updateTime: 'desc' });
+        resolve(notifications);
+    })
+}
+
+const countNotifications = (facebook_id) => {
+
+    return new Promise(async resolve => {
+        const count = await roomChatModel.countDocuments({
+            $and: [
+                {
+                    arrayUserIds: String(facebook_id)
+                },
+                {
+                    "lastMessages.userId": { $ne: String(facebook_id) }
+                },
+                {
+                    "lastMessages.hasRead": false
+                },
+                {
+                    lastMessages: { $exists: true }
                 }
             ]
         });
-        resolve(notifications);
+
+        resolve(count);
     })
 }
 
 
 
 
-module.exports = { findRoomchat, addMessage, getNotifications };
+module.exports = { findRoomchat, addMessage, getNotifications, countNotifications };

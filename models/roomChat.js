@@ -18,7 +18,8 @@ const roomChatSchema = new mongoose.Schema({
         avatar: String,
         hasRead: Boolean,
         time: Date
-    }
+    },
+    updateTime: { type: Date, default: Date.now }
 });
 
 function arrayLimit(val) {
