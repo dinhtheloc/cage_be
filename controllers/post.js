@@ -1,5 +1,6 @@
 // const roomChatModel = require('../models/roomChat');
 let post = require('../models/post');
+const { userModel } = require('../models/user');
 
 const getPosts = async (req, res) => {
 
@@ -34,20 +35,21 @@ const getPosts = async (req, res) => {
     }
 }
 
-const createPost = (req, res) => {
-    const { title, rank, slot, description } = req.body;
+const createPost = async (req, res) => {
+    const { title, rank, description } = req.body;
 
-    if (!title && !rank && !slot && !description) {
+    if (!title && !rank && !description) {
         res.status(400).send('Dữ liệu không hợp lệ');
         return;
     }
 
-    const user = res.locals.user;
+    const { _id } = res.locals.user;
+    const user = await userModel.findById(_id).exec();
 
     const createDate = new Date();
 
     const data = {
-        title, rank, slot, description, user, createDate
+        title, rank, description, user, createDate
     };
 
     post.create({ ...data }, (error, data) => {
