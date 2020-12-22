@@ -58,4 +58,4 @@ app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 
-server.listen(process.env.PORT || 3000, () => console.log(`Server has started.`));
+server.listen(process.env.PORT || 3001, () => console.log(`Server has started.`));
