@@ -2,7 +2,8 @@ const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const dotenv = require('dotenv');
-const http = require('http');
+// const http = require('http');
+const https = require('https');
 const path = require('path');
 
 const socketio = require('socket.io');
@@ -14,7 +15,11 @@ const ConfigSocketChat = require('./config/socket/socketChat');
 // Setting up express
 // const app = express();
 const app = require('express')();
-const server = http.createServer(app);
+const server = https.createServer({
+    key: fs.readFileSync('./key.pem'),
+    cert: fs.readFileSync('./cert.pem'),
+    passphrase: process.env.PASSPHRASE
+}, app);
 const io = socketio(server, {
     cors: {
         origin: "http://localhost:3000",
