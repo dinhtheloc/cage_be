@@ -6,21 +6,30 @@ const getPosts = async (req, res) => {
 
     const { pageIndex = 1, pageSize = 1, rankFilter } = req.query;
     try {
-        // execute query with page and limit values
-        let posts;
-        if (rankFilter) {
-            posts = await post.find({ rank: rankFilter })
-                .sort({ createDate: -1 })
-                .limit(pageSize * 1)
-                .skip((pageIndex - 1) * pageSize)
-                .exec();
-        } else {
-            posts = await post.find()
-                .sort({ createDate: -1 })
-                .limit(pageSize * 1)
-                .skip((pageIndex - 1) * pageSize)
-                .exec();
+        const now = new Date();
+        const start = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 1, 0, 0);
+
+        const end = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1, 0, 59, 59);
+
+
+        const filter = {
+            createDate: {
+                $gte: start,
+                $lt: end
+            }
         }
+
+        if (rankFilter) {
+            filter.rank = rankFilter
+        }
+        console.log(filter)
+
+        const posts = await post.find(filter)
+            .sort({ createDate: -1 })
+            .limit(pageSize * 1)
+            .skip((pageIndex - 1) * pageSize)
+            .exec();
+
         // get total documents in the Posts collection 
         const count = await post.countDocuments();
         // return response with posts, total pages, and current page
