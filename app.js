@@ -5,21 +5,22 @@ const dotenv = require('dotenv');
 const http = require('http');
 const path = require('path');
 const socketio = require('socket.io');
-
+const fs = require('fs');
 const ConfigPassport = require('./config/passport');
 const ConfigMongodb = require('./config/mongodb');
 const ConfigSocketChat = require('./config/socket/socketChat');
 
-// Setting up express
-// const app = express();
+const options = {
+  key: fs.readFileSync('/etc/letsencrypt/live/cayghe.com/privkey.pem'),
+  cert: fs.readFileSync('/etc/letsencrypt/live/cayghe.com/fullchain.pem'),
+};
+
 const app = require('express')();
+
+
 const server = http.createServer(app);
-const io = socketio(server, {
-    cors: {
-        origin: "http://localhost:3000",
-        methods: ["GET", "POST"]
-    }
-});
+
+const io = socketio(server);
 
 app.use(cors());
 
@@ -58,3 +59,4 @@ app.get('*', (req, res) => {
 });
 
 server.listen(process.env.PORT || 3001, () => console.log(`Server has started.`));
+
