@@ -26,7 +26,9 @@ const ConfigPassport = function (app) {
           user = new userModel({
             facebook_id: profile.id,
             name: profile.displayName,
-            avatar: 'defaultAvatar.png'
+            avatar: 'defaultAvatar.png',
+            isOnline: false,
+            lastTimeOnline: new Date
           });
           user.save(function (err) {
             if (err) {

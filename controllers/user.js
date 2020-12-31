@@ -96,7 +96,20 @@ const uploadAvatar = async (req, res) => {
     res.status(200).send('Cập nhật thành công');
 }
 
+
+const updateOnlineOffline = async (req, res) => {
+    const { _id, status } = req.body.data;
+
+    const user = await userModel.findById(_id);
+    user.isOnline = status;
+    if (status === false) {
+        user.lastTimeOnline = new Date()
+    }
+    user.save();
+    res.status(200).send('Cập nhật thành công');
+}
+
 module.exports = {
     findUserByFacebookId, getUsers, createUsers,
-    getUserById, updateUserById, uploadAvatar
+    getUserById, updateUserById, uploadAvatar, updateOnlineOffline
 };

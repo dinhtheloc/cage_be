@@ -22,7 +22,6 @@ const getPosts = async (req, res) => {
         if (rankFilter) {
             filter.rank = rankFilter
         }
-        console.log(filter)
 
         const posts = await post.find(filter)
             .sort({ createDate: -1 })

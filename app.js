@@ -29,7 +29,6 @@ dotenv.config();
 ConfigPassport(app);
 ConfigMongodb();
 ConfigSocketChat(io);
-
 // Api root
 const authenticateToken = require('./middleware/auth');
 const userRoute = require('./routes/users');

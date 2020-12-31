@@ -15,6 +15,13 @@ const userSchema = new mongoose.Schema({
         type: String,
         enum: ['none', 'iron', 'bronze', 'silver', 'gold', 'platinum', 'diamond', 'immortal', 'radiant'],
         default: 'none'
+    },
+    isOnline: {
+        type: Boolean,
+        default: false
+    },
+    lastTimeOnline: {
+        type: Date, default: Date.now
     }
 });
 
