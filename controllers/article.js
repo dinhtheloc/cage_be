@@ -5,9 +5,6 @@ const getArticles = async (req, res) => {
     const { pageIndex = 1, pageSize = 1 } = req.query;
     try {
 
-        // if (rankFilter) {
-        //     filter.rank = rankFilter
-        // }
 
         const articles = await article.find()
             .sort({ createDate: -1 })
@@ -36,6 +33,7 @@ const createArticle = async (req, res) => {
         published
     } = req.body;
     const slugName = ChangeToSlug(title);
+
     const bodyCreate = {
         slugName,
         title,
@@ -70,7 +68,7 @@ function ChangeToSlug(title) {
     //Xóa các ký tự đặt biệt
     slug = slug.replace(/\`|\~|\!|\@|\#|\||\$|\%|\^|\&|\*|\(|\)|\+|\=|\,|\.|\/|\?|\>|\<|\'|\"|\:|\;|_/gi, '');
     //Đổi khoảng trắng thành ký tự gạch ngang
-    slug = slug.replace(/ /gi, " - ");
+    slug = slug.replace(/ /gi, "-");
     //Đổi nhiều ký tự gạch ngang liên tiếp thành 1 ký tự gạch ngang
     //Phòng trường hợp người nhập vào quá nhiều ký tự trắng
     slug = slug.replace(/\-\-\-\-\-/gi, '-');
