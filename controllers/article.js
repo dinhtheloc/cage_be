@@ -4,8 +4,6 @@ let article = require('../models/article');
 const getArticles = async (req, res) => {
     const { pageIndex = 1, pageSize = 1 } = req.query;
     try {
-
-
         const articles = await article.find()
             .sort({ createDate: -1 })
             .limit(pageSize * 1)

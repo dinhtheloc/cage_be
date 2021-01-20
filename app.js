@@ -20,9 +20,8 @@ const io = socketio(server, {
 
 app.use(cors());
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({
-    extended: false
-}));
+// Put these statements before you define any routes.
+app.use(bodyParser.urlencoded({ extended: true })); 
 
 dotenv.config();
 
@@ -34,10 +33,12 @@ const authenticateToken = require('./middleware/auth');
 const userRoute = require('./routes/users');
 const postRoute = require('./routes/posts');
 const articleRoute = require('./routes/article');
+const imageBlogRoute = require('./routes/image-blog');
 const authRoute = require('./routes/auth');
-app.use('/api', authenticateToken, [userRoute, postRoute, articleRoute]);
+app.use('/api', authenticateToken, [userRoute, postRoute, articleRoute, imageBlogRoute]);
 app.use('/', authRoute);
 app.use('/upload', express.static('public/upload'));
+app.use('/blog-images', express.static('public/blog-images'));
 app.use(express.static(path.join(__dirname, 'build')));
 
 app.get('/', function (req, res) {
