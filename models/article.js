@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const articleSchema = new mongoose.Schema({
     slugName: String,
     title: String,
+    banner: String,
     body: String,
     published: { type: Boolean, default: false },
     updateDate: { type: Date, default: Date.now },

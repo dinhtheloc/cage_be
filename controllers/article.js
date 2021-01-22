@@ -27,6 +27,7 @@ const getArticles = async (req, res) => {
 const createArticle = async (req, res) => {
     const {
         title,
+        banner,
         body,
         published
     } = req.body;
@@ -34,6 +35,7 @@ const createArticle = async (req, res) => {
 
     const bodyCreate = {
         slugName,
+        banner,
         title,
         body,
         published
@@ -46,6 +48,45 @@ const createArticle = async (req, res) => {
         } else {
             res.status(200).send('Tạo mới thành công');
         }
+    });
+}
+
+const updateArticle = async (req, res) => {
+    const {
+        _id,
+        title,
+        banner,
+        body,
+        published
+    } = req.body;
+
+
+    const item = await article.findById(_id);
+
+    const slugName = ChangeToSlug(title);
+
+    item.title = title;
+    item.slugName = slugName;
+    item.banner = banner;
+    item.body = body;
+    item.published = published;
+    item.save();
+    res.status(200).send('Cập nhật thành công');
+}
+
+
+
+const deleteArticle = async (req, res) => {
+    const {
+        _id
+    } = req.body;
+
+    article.findByIdAndDelete(_id, (err) => {
+        if (err) {
+            res.status(500).send('Hệ thống gặp lỗi');
+            return;
+        }
+        res.status(200).send('Xóa thành công ' + _id);
     });
 }
 
@@ -81,4 +122,4 @@ function ChangeToSlug(title) {
 }
 
 
-module.exports = { createArticle, getArticles };
+module.exports = { createArticle, getArticles, updateArticle, deleteArticle };
