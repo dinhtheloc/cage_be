@@ -1,9 +1,9 @@
 const express = require('express');
 const Route = express.Router();
-const upload = require('../middleware/upload');
+const upload = require('../../middleware/upload');
 
 const { getUsers, createUsers, updateOnlineOffline,
-    getUserById, updateUserById, uploadAvatar } = require('../controllers/user');
+    getUserById, updateUserById, uploadAvatar } = require('../../controllers/user');
 
 Route.get("/getUsers", (req, res) => getUsers(req, res));
 

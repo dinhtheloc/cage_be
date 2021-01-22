@@ -24,11 +24,50 @@ const getArticles = async (req, res) => {
     }
 }
 
+const getArticlesPublic = async (req, res) => {
+    const { pageIndex = 1, pageSize = 1 } = req.query;
+    try {
+        const articles = await article.find({
+            published: true
+        }).sort({ createDate: -1 })
+            .limit(pageSize * 1)
+            .skip((pageIndex - 1) * pageSize)
+            .exec();
+
+        // get total documents in the Posts collection 
+        const count = await article.countDocuments({
+            published: true
+        });
+        // return response with posts, total pages, and current page
+        res.json({
+            articles,
+            count,
+            totalPages: Math.ceil(count / pageSize),
+            pageIndex
+        });
+    } catch (err) {
+        console.error(err.message);
+    }
+}
+
+const getArticleById = async (req, res) => {
+    const { _id } = req.body;
+    console.log(_id);
+    try {
+        const item = await article.findById(_id).exec();
+        res.json(item);
+    } catch (err) {
+        console.error(err.message);
+    }
+}
+
 const createArticle = async (req, res) => {
     const {
         title,
         banner,
         body,
+        description,
+        image400x400,
         published
     } = req.body;
     const slugName = ChangeToSlug(title);
@@ -38,6 +77,8 @@ const createArticle = async (req, res) => {
         banner,
         title,
         body,
+        description,
+        image400x400,
         published
     };
 
@@ -57,6 +98,8 @@ const updateArticle = async (req, res) => {
         title,
         banner,
         body,
+        description,
+        image400x400,
         published
     } = req.body;
 
@@ -69,6 +112,8 @@ const updateArticle = async (req, res) => {
     item.slugName = slugName;
     item.banner = banner;
     item.body = body;
+    item.description = description;
+    item.image400x400 = image400x400;
     item.published = published;
     item.save();
     res.status(200).send('Cập nhật thành công');
@@ -122,4 +167,7 @@ function ChangeToSlug(title) {
 }
 
 
-module.exports = { createArticle, getArticles, updateArticle, deleteArticle };
+module.exports = {
+    createArticle, getArticles, updateArticle, deleteArticle,
+    getArticlesPublic, getArticleById
+};

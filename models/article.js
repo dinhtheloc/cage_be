@@ -4,6 +4,8 @@ const mongoose = require('mongoose');
 const articleSchema = new mongoose.Schema({
     slugName: String,
     title: String,
+    description: String,
+    image400x400: String, 
     banner: String,
     body: String,
     published: { type: Boolean, default: false },
