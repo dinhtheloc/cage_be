@@ -27,7 +27,6 @@ const createImage = async (req, res) => {
     });
 }
 
-
 const getListImage = async (req, res) => {
     imageBlog.find((error, data) => {
         if (error) {
