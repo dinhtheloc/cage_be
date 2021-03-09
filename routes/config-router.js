@@ -1,7 +1,5 @@
 const ConfigRouter = (app) => {
     // Api root
-    const express = require('express');
-    const path = require('path');
     const authenticateToken = require('../middleware/auth');
     const userRoute = require('./admin/users');
     const postRoute = require('./admin/posts');
@@ -28,18 +26,6 @@ const ConfigRouter = (app) => {
 
     app.use('/', authRoute);
     app.use('/api-blog', blogArticleRoute);
-    app.use('/upload', express.static('public/upload'));
-    app.use('/blog-images', express.static('public/blog-images'));
-    app.use(express.static(path.join(__dirname, 'build')));
-
-    app.get('/', function (req, res) {
-        res.sendFile(path.join(__dirname, 'build', 'index.html'));
-    });
-
-    // Handles any requests that don't match the ones above
-    app.get('*', (req, res) => {
-        res.sendFile(path.join(__dirname, 'build', 'index.html'));
-    });
 }
 
 
