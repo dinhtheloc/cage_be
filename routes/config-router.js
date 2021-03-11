@@ -23,7 +23,6 @@ const ConfigRouter = (app) => {
 
 
     app.use('/api', authenticateToken, listRouteBO);
-
     app.use('/', authRoute);
     app.use('/api-blog', blogArticleRoute);
 }
