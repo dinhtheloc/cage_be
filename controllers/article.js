@@ -52,7 +52,6 @@ const getArticlesPublic = async (req, res) => {
 
 const getArticleById = async (req, res) => {
     const { _id } = req.body;
-    console.log(_id);
     try {
         const item = await article.findById(_id).exec();
         res.json(item);

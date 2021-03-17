@@ -2,15 +2,18 @@ const mongoose = require('mongoose');
 
 const productSchema = new mongoose.Schema({
     categoryId: String,
+    typeId: String,
     avatar: String,
     name: String,
     slug: String,
     images: {
-        type: String,
+        type: [String],
         default: []
     },
     loves: Number,
-    price: Number,
+    buyingPrice: Number,
+    saleprice: Number,
+    inventoryNumber: Number,
     shortDescription: String,
     description: String,
     isActive: Boolean,

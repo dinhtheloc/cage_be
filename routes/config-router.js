@@ -9,6 +9,7 @@ const ConfigRouter = (app) => {
     const blogArticleRoute = require('./blog-site/article');
 
     const categoryRoute = require('./admin/category');
+    const typeRoute = require('./admin/type');
     const productRoute = require('./admin/product');
 
     const listRouteBO = [
@@ -18,6 +19,7 @@ const ConfigRouter = (app) => {
         imageBlogRoute,
         // xing beauty
         categoryRoute,
+        typeRoute,
         productRoute
     ];
 

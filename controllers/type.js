@@ -1,23 +1,19 @@
-let productModel = require('../models/product');
+// const roomChatModel = require('../models/roomChat');
+let typeModel = require('../models/type');
 
-const getProduct = async (req, res) => {
-    const { pageIndex = 1, pageSize = 1, name = '' } = req.query;
+const getType = async (req, res) => {
+    const { pageIndex = 1, pageSize = 1 } = req.query;
     try {
-        let product;
-        const request = {}
-
-        if (name) {
-            request.name = new RegExp(name, 'i');
-        }
-
+        let type;
         if (
-            Number(pageIndex) === 0 && Number(pageSize) === 0
+            Number(pageIndex) === 0 &&
+            Number(pageSize) === 0
         ) {
-            product = await productModel.find(request)
+            type = await typeModel.find()
                 .sort({ createDate: -1 })
                 .exec();
         } else {
-            product = await productModel.find(request)
+            type = await typeModel.find()
                 .sort({ createDate: -1 })
                 .limit(pageSize * 1)
                 .skip((pageIndex - 1) * pageSize)
@@ -25,10 +21,10 @@ const getProduct = async (req, res) => {
         }
 
         // get total documents in the Posts collection 
-        const count = await productModel.countDocuments(request);
+        const count = await typeModel.countDocuments();
         // return response with posts, total pages, and current page
         res.json({
-            product,
+            type,
             count,
             totalPages: Math.ceil(count / pageSize),
             pageIndex
@@ -38,30 +34,10 @@ const getProduct = async (req, res) => {
     }
 }
 
-const getProductById = async (req, res) => {
-    const { _id } = req.body;
-    try {
-        const item = await productModel.findById(_id).exec();
-        res.json(item);
-    } catch (err) {
-        console.error(err.message);
-    }
-}
-
-const createProduct = async (req, res) => {
+const createType = async (req, res) => {
     const {
-        categoryId,
-        typeId,
         name,
-        avatar,
-        images,
-        loves,
-        buyingPrice,
-        saleprice,
-        inventoryNumber,
-        shortDescription,
-        description,
-        isActive,
+        isActive
     } = req.body;
 
     const slug = ChangeToSlug(name);
@@ -69,19 +45,10 @@ const createProduct = async (req, res) => {
     const bodyCreate = {
         name,
         slug,
-        categoryId,
-        typeId,
-        avatar,
-        images,
-        loves,
-        buyingPrice,
-        saleprice,
-        shortDescription,
-        description,
         isActive
     };
 
-    productModel.create({ ...bodyCreate }, (error, data) => {
+    typeModel.create({ ...bodyCreate }, (error, data) => {
         if (error) {
             res.status(500).send('Hệ thống gặp lỗi');
             return;
@@ -91,56 +58,22 @@ const createProduct = async (req, res) => {
     });
 }
 
-
-
-const updateProduct = async (req, res) => {
+const updateType = async (req, res) => {
     const {
         _id,
-        categoryId,
-        typeId,
-        avatar,
-        images,
-        loves,
-        buyingPrice,
-        saleprice,
-        inventoryNumber,
-        shortDescription,
-        description,
-        isActive,
+        name,
+        isActive
     } = req.body;
 
+    const slug = ChangeToSlug(name);
 
-    const item = await productModel.findById(_id);
-    item.categoryId = categoryId;
-    item.typeId = typeId;
-    item.avatar = avatar;
-    item.images = images;
-    item.loves = loves;
-    item.buyingPrice = buyingPrice;
-    item.saleprice = saleprice;
-    item.inventoryNumber = inventoryNumber;
-    item.shortDescription = shortDescription;
-    item.description = description;
+    const item = await typeModel.findById(_id);
+    item.name = name;
+    item.slug = slug;
     item.isActive = isActive;
     item.updateDate = new Date();
-
     item.save();
-
     res.status(200).send('Cập nhật thành công');
-}
-
-const deleteProduct = async (req, res) => {
-    const {
-        _id
-    } = req.body;
-
-    productModel.findByIdAndDelete(_id, (err) => {
-        if (err) {
-            res.status(500).send('Hệ thống gặp lỗi');
-            return;
-        }
-        res.status(200).send('Xóa thành công ' + _id);
-    });
 }
 
 
@@ -176,9 +109,7 @@ function ChangeToSlug(name) {
 
 
 module.exports = {
-    createProduct,
-    getProductById,
-    getProduct,
-    updateProduct,
-    deleteProduct
+    createType,
+    getType,
+    // updateType
 };

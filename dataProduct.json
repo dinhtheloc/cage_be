@@ -1,0 +1,1210 @@
+[
+    {
+      "Category": "Make up",
+      "Type": "Tẩy trang",
+      "name": "Bông tẩy trang miniso 1000m",
+      "inventoryNumber": 0,
+      "buyingPrice": 43,
+      "saleprice": 60
+    },
+    {
+      "Category": "Make up",
+      "Type": "Tẩy trang",
+      "name": "Bông tẩy trang ipek",
+      "inventoryNumber": 0,
+      "buyingPrice": 28,
+      "saleprice": 35
+    },
+    {
+      "Category": "Skincare",
+      "Type": "Son dưỡng",
+      "name": "Son dior dưỡng môi cam",
+      "inventoryNumber": 0,
+      "buyingPrice": 574,
+      "saleprice": 630
+    },
+    {
+      "Category": "Make up",
+      "Type": "Che khuyết điểm",
+      "name": "Che khuyết điểm the saem",
+      "inventoryNumber": 0,
+      "buyingPrice": 56,
+      "saleprice": 80
+    },
+    {
+      "Category": "Skincare",
+      "Type": "Trị mụn",
+      "name": "Dán mụn corsx",
+      "inventoryNumber": 0,
+      "buyingPrice": 46,
+      "saleprice": 60
+    },
+    {
+      "Category": "Make up",
+      "Type": "Mắt",
+      "name": "Kẻ mắt Kardium",
+      "inventoryNumber": 0,
+      "buyingPrice": 74,
+      "saleprice": 95
+    },
+    {
+      "Category": "Skincare",
+      "Type": "Tẩy TBC",
+      "name": "Tẩy tế bào chết",
+      "inventoryNumber": 0,
+      "buyingPrice": 87,
+      "saleprice": 120
+    },
+    {
+      "Category": "Make up",
+      "Type": "Son màu",
+      "name": "Son 3CE Velvelt liptint #Childlike",
+      "inventoryNumber": 0,
+      "buyingPrice": 199,
+      "saleprice": 250
+    },
+    {
+      "Category": "Make up",
+      "Type": "Phấn phủ",
+      "name": "Phấn phủ Can make",
+      "inventoryNumber": 0,
+      "buyingPrice": 220,
+      "saleprice": 260
+    },
+    {
+      "Category": "Skincare",
+      "Type": "Mặt nạ",
+      "name": "Mặt nạ Kiehls hoa cúc",
+      "inventoryNumber": 0,
+      "buyingPrice": 190,
+      "saleprice": 240
+    },
+    {
+      "Category": "Skincare",
+      "Type": "Mặt nạ",
+      "name": "Mặt nạ Kiehls dâm bụt",
+      "inventoryNumber": 1,
+      "buyingPrice": 175,
+      "saleprice": 210
+    },
+    {
+      "Category": "Make up",
+      "Type": "Kem chống nắng",
+      "name": "Kem chống nắng Clarins",
+      "inventoryNumber": 0,
+      "buyingPrice": 195,
+      "saleprice": 230
+    },
+    {
+      "Category": "Skincare",
+      "Type": "Tẩy trang",
+      "name": "Tẩy trang Shu Uemura Nâu",
+      "inventoryNumber": 1,
+      "buyingPrice": 165,
+      "saleprice": 240
+    },
+    {
+      "Category": "Make up",
+      "Type": "Son màu",
+      "name": "Son dior ultra care #999",
+      "inventoryNumber": 0,
+      "buyingPrice": 630,
+      "saleprice": 660
+    },
+    {
+      "Category": "Skincare",
+      "Type": "Tẩy trang",
+      "name": "Tẩy trang Shu tuýp hồng",
+      "inventoryNumber": 0,
+      "buyingPrice": 30,
+      "saleprice": 40
+    },
+    {
+      "Category": "Skincare",
+      "Type": "Kem mắt",
+      "name": "Kem mắt SKII mini",
+      "inventoryNumber": 1,
+      "buyingPrice": 202,
+      "saleprice": 215
+    },
+    {
+      "Category": "Skincare",
+      "Type": "Sửa rửa mặt",
+      "name": "Sửa rửa mặt SKII mini",
+      "inventoryNumber": 1,
+      "buyingPrice": 135,
+      "saleprice": 160
+    },
+    {
+      "Category": "Skincare",
+      "Type": "Kem dưỡng da",
+      "name": "Kem dưỡng da Clinique gel trong",
+      "inventoryNumber": 1,
+      "buyingPrice": 95,
+      "saleprice": 120
+    },
+    {
+      "Category": "Skincare",
+      "Type": "Kem mắt",
+      "name": "Kem dưỡng mắt Estee Lauder",
+      "inventoryNumber": 0,
+      "buyingPrice": 200,
+      "saleprice": 250
+    },
+    {
+      "Category": "Skincare",
+      "Type": "TPCN",
+      "name": "DHC trắng da",
+      "inventoryNumber": 1,
+      "buyingPrice": 98,
+      "saleprice": 130
+    },
+    {
+      "Category": "Skincare",
+      "Type": "TPCN",
+      "name": "DHC chống ánh sáng xanh",
+      "inventoryNumber": 1,
+      "buyingPrice": 150,
+      "saleprice": 200
+    },
+    {
+      "Category": "Skincare",
+      "Type": "TPCN",
+      "name": "DHC mầm đậu nành",
+      "inventoryNumber": 1,
+      "buyingPrice": 160,
+      "saleprice": 210
+    },
+    {
+      "Category": "Skincare",
+      "Type": "TPCN",
+      "name": "DHC xanh da trời nhạt ??? (nhau thai cừu)",
+      "inventoryNumber": 1,
+      "buyingPrice": 188,
+      "saleprice": 230
+    },
+    {
+      "Category": "Skincare",
+      "Type": "Sửa rửa mặt",
+      "name": "Sửa rửa mặt KOSE xanh dương",
+      "inventoryNumber": 0,
+      "buyingPrice": 80,
+      "saleprice": 115
+    },
+    {
+      "Category": "Skincare",
+      "Type": "Lăn nách",
+      "name": "Lăn nách đá khoáng Soft Stone",
+      "inventoryNumber": 0,
+      "buyingPrice": 180,
+      "saleprice": 210
+    },
+    {
+      "Category": "Skincare",
+      "Type": "Tẩy trang",
+      "name": "Tẩy trang Bioderma 100ml",
+      "inventoryNumber": 0,
+      "buyingPrice": 105,
+      "saleprice": 115
+    },
+    {
+      "Category": "Make up",
+      "Type": "Mascara",
+      "name": "Mascara Kiss me Heroine #đen",
+      "inventoryNumber": 1,
+      "buyingPrice": 195,
+      "saleprice": 230
+    },
+    {
+      "Category": "Skincare",
+      "Type": "Dưỡng da",
+      "name": "Kem dưỡng ẩm Botanical One Gel",
+      "inventoryNumber": 1,
+      "buyingPrice": 220,
+      "saleprice": 255
+    },
+    {
+      "Category": "Skincare",
+      "Type": "Body Lotion",
+      "name": "Kem dưỡng trắng da chống nắng body Hatomugi",
+      "inventoryNumber": 1,
+      "buyingPrice": 170,
+      "saleprice": 200
+    },
+    {
+      "Category": "Skincare",
+      "Type": "Tẩy tế bào chết",
+      "name": "Tẩy tế bào chết mặt Botanical",
+      "inventoryNumber": 1,
+      "buyingPrice": 390,
+      "saleprice": 390
+    },
+    {
+      "Category": "Skincare",
+      "Type": "Kem dưỡng da",
+      "name": "Kem dưỡng da Innisfree Cam",
+      "inventoryNumber": 0,
+      "buyingPrice": 400,
+      "saleprice": 200
+    },
+    {
+      "Category": "Make up",
+      "Type": "Nước hoa",
+      "name": "Nước hoa Narciso đỏ & cà rốt",
+      "inventoryNumber": 0,
+      "buyingPrice": 1195,
+      "saleprice": 1315
+    },
+    {
+      "Category": "Skincare",
+      "Type": "Body Lotion",
+      "name": "Lotion Lancome Lanuit Tresor 50ml đen",
+      "inventoryNumber": 1,
+      "buyingPrice": 165,
+      "saleprice": 230
+    },
+    {
+      "Category": "Make up",
+      "Type": "Nước hoa",
+      "name": "Nước hoa Amo Ferragamo Purse Spray 10ml",
+      "inventoryNumber": 1,
+      "buyingPrice": 185,
+      "saleprice": 230
+    },
+    {
+      "Category": "Make up",
+      "Type": "Nước hoa",
+      "name": "Nước hoa Signoria Ribelle Hồng 5ml",
+      "inventoryNumber": 1,
+      "buyingPrice": 155,
+      "saleprice": 220
+    },
+    {
+      "Category": "Make up",
+      "Type": "Nước hoa",
+      "name": "Nước hoa Signoria Misteriosa Đen 5ml",
+      "inventoryNumber": 1,
+      "buyingPrice": 145,
+      "saleprice": 210
+    },
+    {
+      "Category": "Skincare",
+      "Type": "Serum",
+      "name": "Set dưỡng 2 món Lancome mắt 5ml & mặt 10ml",
+      "inventoryNumber": 1,
+      "buyingPrice": 260,
+      "saleprice": 350
+    },
+    {
+      "Category": "Make up",
+      "Type": "Nước hoa",
+      "name": "Nước hoa Sì Giorgio Armani Eau De Parfum Pour Femme 7ml",
+      "inventoryNumber": 1,
+      "buyingPrice": 335,
+      "saleprice": 430
+    },
+    {
+      "Category": "Make up",
+      "Type": "Nước hoa",
+      "name": "Nước hoa Gucci Memoire D'une Odeur Xanh Lá 5ml",
+      "inventoryNumber": 1,
+      "buyingPrice": 275,
+      "saleprice": 370
+    },
+    {
+      "Category": "Make up",
+      "Type": "Nước hoa",
+      "name": "Nước hoa Dolce & Gabbana Rosa Excelsa hồng 7.4ml",
+      "inventoryNumber": 1,
+      "buyingPrice": 295,
+      "saleprice": 380
+    },
+    {
+      "Category": "Make up",
+      "Type": "Nước hoa",
+      "name": "Nước hoa Dior Joy Eau De Parfum 5ml Full box",
+      "inventoryNumber": 1,
+      "buyingPrice": 255,
+      "saleprice": 325
+    },
+    {
+      "Category": "Skincare",
+      "Type": "Son dưỡng",
+      "name": "Son dưỡng YSL màu 05 Delirious Orange - mẫu tim",
+      "inventoryNumber": 3,
+      "buyingPrice": 360,
+      "saleprice": 460
+    },
+    {
+      "Category": "Skincare",
+      "Type": "Son dưỡng",
+      "name": "Son dưỡng YSL màu 82",
+      "inventoryNumber": 0,
+      "buyingPrice": 395,
+      "saleprice": 515
+    },
+    {
+      "Category": "Make up",
+      "Type": "Son màu",
+      "name": "Son màu YSL màu 103",
+      "inventoryNumber": 0,
+      "buyingPrice": 405,
+      "saleprice": 530
+    },
+    {
+      "Category": "Make up",
+      "Type": "Son màu",
+      "name": "Son Gucci vỏ hoa màu 500",
+      "inventoryNumber": 1,
+      "buyingPrice": 470,
+      "saleprice": 550
+    },
+    {
+      "Category": "Make up",
+      "Type": "Son màu",
+      "name": "Son màu Gucci vỏ vàng 302",
+      "inventoryNumber": 2,
+      "buyingPrice": 440,
+      "saleprice": 550
+    },
+    {
+      "Category": "Make up",
+      "Type": "Nước hoa",
+      "name": "Set nước hoa Jadior",
+      "inventoryNumber": 1,
+      "buyingPrice": 335,
+      "saleprice": 440
+    },
+    {
+      "Category": "Skincare",
+      "Type": "Nước thần",
+      "name": "Nước thần Estee Lauder Cám Vàng",
+      "inventoryNumber": 0,
+      "buyingPrice": 235,
+      "saleprice": 300
+    },
+    {
+      "Category": "Skincare",
+      "Type": "Kem chống nắng",
+      "name": "Kem chống nắng Clarins tone hồng 50ml",
+      "inventoryNumber": 0,
+      "buyingPrice": 900,
+      "saleprice": 1030
+    },
+    {
+      "Category": "Skincare",
+      "Type": "Tẩy trang",
+      "name": "Tẩy trang Bioderma hồng 500ml",
+      "inventoryNumber": 1,
+      "buyingPrice": 260,
+      "saleprice": 330
+    },
+    {
+      "Category": "Make up",
+      "Type": "Nước hoa",
+      "name": "Set xịt thơm & body Lotion Victoria Secret very sexy, bomb shell, bomb shell intense",
+      "inventoryNumber": 1,
+      "buyingPrice": 445,
+      "saleprice": 550
+    },
+    {
+      "Category": "Skincare",
+      "Type": "Kem dưỡng da",
+      "name": "Set 5 món Clinique",
+      "inventoryNumber": 0,
+      "buyingPrice": 285,
+      "saleprice": 370
+    },
+    {
+      "Category": "Skincare",
+      "Type": "Sửa rửa mặt",
+      "name": "Sửa rửa mặt Fresh Soy Face Cleanser 20ml",
+      "inventoryNumber": 2,
+      "buyingPrice": 70,
+      "saleprice": 110
+    },
+    {
+      "Category": "Skincare",
+      "Type": "Sửa rửa mặt",
+      "name": "Sửa rửa mặt Estee lauder xanh nhạt",
+      "inventoryNumber": 0,
+      "buyingPrice": 90,
+      "saleprice": 125
+    },
+    {
+      "Category": "Skincare",
+      "Type": "Sửa rửa mặt",
+      "name": "Set mặt nạ Kiehls đất sét + gừng",
+      "inventoryNumber": 1,
+      "buyingPrice": 235,
+      "saleprice": 355
+    },
+    {
+      "Category": "Skincare",
+      "Type": "Toner",
+      "name": "Toner Kiehls hoa cúc",
+      "inventoryNumber": 0,
+      "buyingPrice": 135,
+      "saleprice": 180
+    },
+    {
+      "Category": "Skincare",
+      "Type": "Serum",
+      "name": "Serum Estee Lauder ARN mẫu mới",
+      "inventoryNumber": 2,
+      "buyingPrice": 195,
+      "saleprice": 270
+    },
+    {
+      "Category": "Skincare",
+      "Type": "Serum",
+      "name": "Serum Estee Lauder bản thường",
+      "inventoryNumber": 2,
+      "buyingPrice": 165,
+      "saleprice": 235
+    },
+    {
+      "Category": "Skincare",
+      "Type": "Sữa tắm",
+      "name": "Sữa tắm Lancome La Nuit Tresor 50ml hồng",
+      "inventoryNumber": 0,
+      "buyingPrice": 150,
+      "saleprice": 210
+    },
+    {
+      "Category": "Skincare",
+      "Type": "Toner",
+      "name": "Lotion dưỡng da clinique",
+      "inventoryNumber": 0,
+      "buyingPrice": 150,
+      "saleprice": 90
+    },
+    {
+      "Category": "Skincare",
+      "Type": "Kem dưỡng da",
+      "name": "Kem dưỡng da clinique gel vàng",
+      "inventoryNumber": 1,
+      "buyingPrice": 150,
+      "saleprice": 200
+    },
+    {
+      "Category": "Skincare",
+      "Type": "Mặt nạ",
+      "name": "Mặt nạ gừng kiehls",
+      "inventoryNumber": 1,
+      "buyingPrice": 150,
+      "saleprice": 210
+    },
+    {
+      "Category": "Skincare",
+      "Type": "Mặt nạ",
+      "name": "Mặt nạ đất sét kiehls",
+      "inventoryNumber": 1,
+      "buyingPrice": 85,
+      "saleprice": 150
+    },
+    {
+      "Category": "Skincare",
+      "Type": "Sửa rửa mặt",
+      "name": "Sửa rửa mặt trà xanh innisfree",
+      "inventoryNumber": 2,
+      "buyingPrice": 129,
+      "saleprice": 170
+    },
+    {
+      "Category": "Make up",
+      "Type": "Phấn phủ",
+      "name": "Phấn phủ Too Faced Peach Perfect Mattifying Setting Powder",
+      "inventoryNumber": 2,
+      "buyingPrice": 460,
+      "saleprice": 575
+    },
+    {
+      "Category": "Skincare",
+      "Type": "Tẩy TBC",
+      "name": "The Ordinary AHA 30% +BHA 2% Peelong Solution 30ml",
+      "inventoryNumber": 2,
+      "buyingPrice": 180,
+      "saleprice": 230
+    },
+    {
+      "Category": "Skincare",
+      "Type": "Serum",
+      "name": "Serum Kiehls Dark Spot 4ml",
+      "inventoryNumber": 2,
+      "buyingPrice": 115,
+      "saleprice": 150
+    },
+    {
+      "Category": "Skincare",
+      "Type": "Serum",
+      "name": "Kiehls Skin Strengthening Super Serum",
+      "inventoryNumber": 2,
+      "buyingPrice": 120,
+      "saleprice": 165
+    },
+    {
+      "Category": "Skincare",
+      "Type": "Kem chống nắng",
+      "name": "KCN clarins 10ml tone hồng",
+      "inventoryNumber": 1,
+      "buyingPrice": 210,
+      "saleprice": 275
+    },
+    {
+      "Category": "Make up",
+      "Type": "Son màu",
+      "name": "Son Mac mini màu Relentlessly Red/ Chili/ Lady Danger/ Russian Red/ Diva/ Mehr mỗi màu 1 cây",
+      "inventoryNumber": 6,
+      "buyingPrice": 230,
+      "saleprice": 290
+    },
+    {
+      "Category": "Skincare",
+      "Type": "Serum",
+      "name": "Serum Esteelauder Rapid Britening Vitamin C",
+      "inventoryNumber": 2,
+      "buyingPrice": 200,
+      "saleprice": 290
+    },
+    {
+      "Category": "Skincare",
+      "Type": "Sửa rửa mặt",
+      "name": "Sửa rửa mặt Kiehls hoa cúc",
+      "inventoryNumber": 2,
+      "buyingPrice": 95,
+      "saleprice": 125
+    },
+    {
+      "Category": "Skincare",
+      "Type": "Serum",
+      "name": "Serum Kem dưỡng clinique vỏ vàng lõi trắng",
+      "inventoryNumber": 1,
+      "buyingPrice": 450,
+      "saleprice": 560
+    },
+    {
+      "Category": "Make up",
+      "Type": "Son màu",
+      "name": "Son YSL mini màu 617",
+      "inventoryNumber": 0,
+      "buyingPrice": 210,
+      "saleprice": 285
+    },
+    {
+      "Category": "Skincare",
+      "Type": "Serum",
+      "name": "Serum Kem dưỡng clinique vỏ trắng trong lõi cam",
+      "inventoryNumber": 1,
+      "buyingPrice": 450,
+      "saleprice": 585
+    },
+    {
+      "Category": "Skincare",
+      "Type": "Son dưỡng",
+      "name": "Son dưỡng Dior 001",
+      "inventoryNumber": 0,
+      "buyingPrice": 450,
+      "saleprice": 565
+    },
+    {
+      "Category": "Skincare",
+      "Type": "Son dưỡng",
+      "name": "Son dưỡng dior 006",
+      "inventoryNumber": 1,
+      "buyingPrice": 450,
+      "saleprice": 560
+    },
+    {
+      "Category": "Skincare",
+      "Type": "Son dưỡng",
+      "name": "Son dưỡng YSL màu 04 Exposing Coral - mẫu tim",
+      "inventoryNumber": 2,
+      "buyingPrice": 370,
+      "saleprice": 480
+    },
+    {
+      "Category": "Make up",
+      "Type": "Son màu",
+      "name": "Son màu Gucci vỏ vàng 503",
+      "inventoryNumber": 1,
+      "buyingPrice": 380,
+      "saleprice": 550
+    },
+    {
+      "Category": "Skincare",
+      "Type": "Son dưỡng",
+      "name": "Son dưỡng Dior 007",
+      "inventoryNumber": 1,
+      "buyingPrice": 450,
+      "saleprice": 595
+    },
+    {
+      "Category": "Skincare",
+      "Type": "Son dưỡng",
+      "name": "Son dưỡng Dior 015",
+      "inventoryNumber": 1,
+      "buyingPrice": 450,
+      "saleprice": 595
+    },
+    {
+      "Category": "Skincare",
+      "Type": "Tẩy trang",
+      "name": "Tẩy trang Laroche - Posay Sensitive Skin",
+      "inventoryNumber": 0,
+      "buyingPrice": 315,
+      "saleprice": 355
+    },
+    {
+      "Category": "Make up",
+      "Type": "Son màu",
+      "name": "Son Shu - uemura full size màu 163",
+      "inventoryNumber": 1,
+      "buyingPrice": 430,
+      "saleprice": 575
+    },
+    {
+      "Category": "Skincare",
+      "Type": "Xịt muỗi",
+      "name": "Xịt chống côn trùng Skin Vape màu xanh",
+      "inventoryNumber": 0,
+      "buyingPrice": 128,
+      "saleprice": 155
+    },
+    {
+      "Category": "Skincare",
+      "Type": "Kem chống nắng",
+      "name": "Sữa chống nắng Anessa Mild Milk full size trắng hồng",
+      "inventoryNumber": 0,
+      "buyingPrice": 479,
+      "saleprice": 555
+    },
+    {
+      "Category": "Skincare",
+      "Type": "No",
+      "name": "Đồ gói hộp quà + nơ",
+      "inventoryNumber": 0,
+      "buyingPrice": 108,
+      "saleprice": 0
+    },
+    {
+      "Category": "Make up",
+      "Type": "Son màu",
+      "name": "Son Burberry 4 màu 113, 409, 429, 434",
+      "inventoryNumber": 4,
+      "buyingPrice": 360,
+      "saleprice": 465
+    },
+    {
+      "Category": "Make up",
+      "Type": "Son màu",
+      "name": "Son Mac Kem full size 989",
+      "inventoryNumber": 1,
+      "buyingPrice": 460,
+      "saleprice": 540
+    },
+    {
+      "Category": "Skincare",
+      "Type": "Tẩy TBC",
+      "name": "Tẩy tế bào chết Clinique 30ml",
+      "inventoryNumber": 1,
+      "buyingPrice": 80,
+      "saleprice": 135
+    },
+    {
+      "Category": "Skincare",
+      "Type": "Mặt nạ",
+      "name": "Mặt nạ Black Tea Perfecting Mask Fresh 15ml",
+      "inventoryNumber": 1,
+      "buyingPrice": 225,
+      "saleprice": 290
+    },
+    {
+      "Category": "Make up",
+      "Type": "Son màu",
+      "name": "Gucci Satin màu 200",
+      "inventoryNumber": 0,
+      "buyingPrice": 290,
+      "saleprice": 500
+    },
+    {
+      "Category": "Make up",
+      "Type": "Son màu",
+      "name": "Mac 427",
+      "inventoryNumber": 0,
+      "buyingPrice": 270,
+      "saleprice": 480
+    },
+    {
+      "Category": "Make up",
+      "Type": "Son màu",
+      "name": "YSL limited màu 13",
+      "inventoryNumber": 0,
+      "buyingPrice": 450,
+      "saleprice": 600
+    },
+    {
+      "Category": "Skincare",
+      "Type": "Dưỡng tóc",
+      "name": "Set lược + dưỡng tóc Morrocanoil",
+      "inventoryNumber": 1,
+      "buyingPrice": 655,
+      "saleprice": 890
+    },
+    {
+      "Category": "Skincare",
+      "Type": "Serum",
+      "name": "Serum YSL mini 7ml (light up, liness away, pure shots Y shape)",
+      "inventoryNumber": 3,
+      "buyingPrice": 160,
+      "saleprice": 215
+    },
+    {
+      "Category": "Skincare",
+      "Type": "Serum",
+      "name": "Serum Dior 7ml Capture total",
+      "inventoryNumber": 1,
+      "buyingPrice": 195,
+      "saleprice": 270
+    },
+    {
+      "Category": "Make up",
+      "Type": "Son màu",
+      "name": "Son Shu mini 163 RD Matte",
+      "inventoryNumber": 1,
+      "buyingPrice": 225,
+      "saleprice": 300
+    },
+    {
+      "Category": "Make up",
+      "Type": "Nước hoa",
+      "name": "Nước Hoa Lancome 5ml idole",
+      "inventoryNumber": 1,
+      "buyingPrice": 265,
+      "saleprice": 345
+    },
+    {
+      "Category": "Make up",
+      "Type": "Nước hoa",
+      "name": "Nước Hoa Lancome 10ml idole",
+      "inventoryNumber": 1,
+      "buyingPrice": 350,
+      "saleprice": 420
+    },
+    {
+      "Category": "Make up",
+      "Type": "Son màu",
+      "name": "Son Estee Lauder 420 Bản Thường",
+      "inventoryNumber": 2,
+      "buyingPrice": 150,
+      "saleprice": 210
+    },
+    {
+      "Category": "Skincare",
+      "Type": "Kem dưỡng da",
+      "name": "Set Dior Capture 4 món",
+      "inventoryNumber": 1,
+      "buyingPrice": 620,
+      "saleprice": 750
+    },
+    {
+      "Category": "Skincare",
+      "Type": "Son dưỡng",
+      "name": "Son dưỡng Dior 6ml Lip Glow Oil",
+      "inventoryNumber": 1,
+      "buyingPrice": 430,
+      "saleprice": 540
+    },
+    {
+      "Category": "Skincare",
+      "Type": "Mặt nạ",
+      "name": "Mặt nạ giấy Foodaholic Essential Mask (2 Vitamin C)",
+      "inventoryNumber": 2,
+      "buyingPrice": 7,
+      "saleprice": 10
+    },
+    {
+      "Category": "Skincare",
+      "Type": "Trị mụn",
+      "name": "Gel chấm mụn Tea Tree Blemish Gel - The Body Shop",
+      "inventoryNumber": 1,
+      "buyingPrice": 130,
+      "saleprice": 165
+    },
+    {
+      "Category": "Skincare",
+      "Type": "Toner",
+      "name": "Toner Some By Mi",
+      "inventoryNumber": 1,
+      "buyingPrice": 187,
+      "saleprice": 235
+    },
+    {
+      "Category": "Skincare",
+      "Type": "Son dưỡng",
+      "name": "Son dưỡng đổi màu YNM Rainbow Honey Lip Balm",
+      "inventoryNumber": 1,
+      "buyingPrice": 104,
+      "saleprice": 130
+    },
+    {
+      "Category": "Skincare",
+      "Type": "Mặt nạ",
+      "name": "Mặt nạ giấy Naruko Mask",
+      "inventoryNumber": 1,
+      "buyingPrice": 22,
+      "saleprice": 25
+    },
+    {
+      "Category": "Skincare",
+      "Type": "Mặt nạ",
+      "name": "Mặt nạ BNBG Vita Genic Jelly Mask (xanh lá, đỏ)",
+      "inventoryNumber": 2,
+      "buyingPrice": 16,
+      "saleprice": 20
+    },
+    {
+      "Category": "Skincare",
+      "Type": "Kẻ mày",
+      "name": "Chì kẻ mày innisfree màu 05",
+      "inventoryNumber": 1,
+      "buyingPrice": 45,
+      "saleprice": 65
+    },
+    {
+      "Category": "Skincare",
+      "Type": "Mặt nạ",
+      "name": "Mặt nạ ngủ môi laneige",
+      "inventoryNumber": 1,
+      "buyingPrice": 43,
+      "saleprice": 63
+    },
+    {
+      "Category": "Skincare",
+      "Type": "Phấn mắt",
+      "name": "Bảng phấn mắt Colour pop - Baby Got Peach",
+      "inventoryNumber": 1,
+      "buyingPrice": 286,
+      "saleprice": 345
+    },
+    {
+      "Category": "Skincare",
+      "Type": "Mặt nạ",
+      "name": "Mặt nạ BBNG Vita Genic Jelly Mask (Vàng)",
+      "inventoryNumber": 1,
+      "buyingPrice": 6,
+      "saleprice": 20
+    },
+    {
+      "Category": "Make up",
+      "Type": "Son màu",
+      "name": "Son 3CE Mood Recipe Matte Lip Color màu 231",
+      "inventoryNumber": 0,
+      "buyingPrice": 230,
+      "saleprice": 295
+    },
+    {
+      "Category": "Make up",
+      "Type": "Bông tẩy trang",
+      "name": "Bông tẩy trang Ipek 130 miếng",
+      "inventoryNumber": 1,
+      "buyingPrice": 25,
+      "saleprice": 35
+    },
+    {
+      "Category": "Make up",
+      "Type": "Phấn phủ",
+      "name": "Phấn Phủ Chanel 15g Poudre Universelle Compacte",
+      "inventoryNumber": 1,
+      "buyingPrice": 1100,
+      "saleprice": 1375
+    },
+    {
+      "Category": "Make up",
+      "Type": "Son màu",
+      "name": "Son Kem 3CE Cloud Lip Tint ( Needed full, Active Lady)",
+      "inventoryNumber": 2,
+      "buyingPrice": 197,
+      "saleprice": 260
+    },
+    {
+      "Category": "Make up",
+      "Type": "Phấn phủ",
+      "name": "Phấn phủ Can make màu MO",
+      "inventoryNumber": 1,
+      "buyingPrice": 200,
+      "saleprice": 270
+    },
+    {
+      "Category": "Make up",
+      "Type": "Son màu",
+      "name": "Gucci 301 vỏ vàng",
+      "inventoryNumber": 1,
+      "buyingPrice": 450,
+      "saleprice": 550
+    },
+    {
+      "Category": "Make up",
+      "Type": "Son màu",
+      "name": "Gucci 503 vỏ vàng",
+      "inventoryNumber": 2,
+      "buyingPrice": 450,
+      "saleprice": 550
+    },
+    {
+      "Category": "Make up",
+      "Type": "Son màu",
+      "name": "Son Charlotte Tibury màu glowinng jen",
+      "inventoryNumber": 1,
+      "buyingPrice": 690,
+      "saleprice": 850
+    },
+    {
+      "Category": "Make up",
+      "Type": "Son màu",
+      "name": "Son thỏi dior 641",
+      "inventoryNumber": 1,
+      "buyingPrice": 440,
+      "saleprice": 575
+    },
+    {
+      "Category": "Skincare",
+      "Type": "Son dưỡng",
+      "name": "Son Dưỡng Dior 6ml 012 Full box",
+      "inventoryNumber": 2,
+      "buyingPrice": 550,
+      "saleprice": 700
+    },
+    {
+      "Category": "Make up",
+      "Type": "Son màu",
+      "name": "Son YSL màu 09",
+      "inventoryNumber": 1,
+      "buyingPrice": 380,
+      "saleprice": 475
+    },
+    {
+      "Category": "Make up",
+      "Type": "Son màu",
+      "name": "Son YSL 216 tester",
+      "inventoryNumber": 1,
+      "buyingPrice": 490,
+      "saleprice": 620
+    },
+    {
+      "Category": "Make up",
+      "Type": "Son màu",
+      "name": "Son Gior mini 201",
+      "inventoryNumber": 1,
+      "buyingPrice": 220,
+      "saleprice": 300
+    },
+    {
+      "Category": "Make up",
+      "Type": "Son màu",
+      "name": "Son YSL màu 85",
+      "inventoryNumber": 1,
+      "buyingPrice": 400,
+      "saleprice": 530
+    },
+    {
+      "Category": "Make up",
+      "Type": "Cushion",
+      "name": "Cushion YSL",
+      "inventoryNumber": 1,
+      "buyingPrice": 900,
+      "saleprice": 1205
+    },
+    {
+      "Category": "Make up",
+      "Type": "Kẻ mày",
+      "name": "Kẻ mày Shu",
+      "inventoryNumber": 0,
+      "buyingPrice": 360,
+      "saleprice": 450
+    },
+    {
+      "Category": "Make up",
+      "Type": "Son màu",
+      "name": "Son Tomford màu 16",
+      "inventoryNumber": 1,
+      "buyingPrice": 700,
+      "saleprice": 875
+    },
+    {
+      "Category": "Skincare",
+      "Type": "Dưõng mi",
+      "name": "Tinh chất dưỡng mi DHC Eyelash Tonic 6,5ml",
+      "inventoryNumber": 0,
+      "buyingPrice": 279,
+      "saleprice": 320
+    },
+    {
+      "Category": "Skincare",
+      "Type": "Mặt nạ",
+      "name": "Mặt nạ dưỡng trắng Klavuu Pink Pearlsation Vital Illumination Pearl Mask",
+      "inventoryNumber": 0,
+      "buyingPrice": 23,
+      "saleprice": 30
+    },
+    {
+      "Category": "Make up",
+      "Type": "Son màu",
+      "name": "Son Nars Aragon",
+      "inventoryNumber": 2,
+      "buyingPrice": 470,
+      "saleprice": 590
+    },
+    {
+      "Category": "Make up",
+      "Type": "Son màu",
+      "name": "Son Nars Baja",
+      "inventoryNumber": 2,
+      "buyingPrice": 430,
+      "saleprice": 560
+    },
+    {
+      "Category": "Make up",
+      "Type": "Nước hoa",
+      "name": "Nước hoa Sì mini 7ml",
+      "inventoryNumber": 1,
+      "buyingPrice": 205,
+      "saleprice": 285
+    },
+    {
+      "Category": "Make up",
+      "Type": "Nước hoa",
+      "name": "Nước hoa Sì đỏ 15ml",
+      "inventoryNumber": 1,
+      "buyingPrice": 470,
+      "saleprice": 610
+    },
+    {
+      "Category": "Make up",
+      "Type": "Son màu",
+      "name": "Son Nars Jane vỏ đỏ limited",
+      "inventoryNumber": 2,
+      "buyingPrice": 505,
+      "saleprice": 630
+    },
+    {
+      "Category": "Make up",
+      "Type": "Son màu",
+      "name": "Son Givenchy màu 42",
+      "inventoryNumber": 2,
+      "buyingPrice": 390,
+      "saleprice": 520
+    },
+    {
+      "Category": "Skincare",
+      "Type": "Body lotion",
+      "name": "Body Lotion Versace 50ml Bright Crystal",
+      "inventoryNumber": 1,
+      "buyingPrice": 165,
+      "saleprice": 215
+    },
+    {
+      "Category": "Skincare",
+      "Type": "Kem dưỡng",
+      "name": "Kem Lancome 15g Clarifique Milkly",
+      "inventoryNumber": 1,
+      "buyingPrice": 260,
+      "saleprice": 315
+    },
+    {
+      "Category": "Skincare",
+      "Type": "Nước thần",
+      "name": "Nước thần Dior",
+      "inventoryNumber": 1,
+      "buyingPrice": 255,
+      "saleprice": 320
+    },
+    {
+      "Category": "Skincare",
+      "Type": "Sửa rửa mặt",
+      "name": "Sữa rửa mặt Lancome",
+      "inventoryNumber": 1,
+      "buyingPrice": 145,
+      "saleprice": 190
+    },
+    {
+      "Category": "Make up",
+      "Type": "Che khuyết điểm",
+      "name": "Che khuyết điểm Nars 6ml Vanilla Full Size Full Box",
+      "inventoryNumber": 2,
+      "buyingPrice": 495,
+      "saleprice": 630
+    },
+    {
+      "Category": "Skincare",
+      "Type": "Nước thần",
+      "name": "Nước thần Estee Lauder Micro Essence 30ml",
+      "inventoryNumber": 1,
+      "buyingPrice": 190,
+      "saleprice": 235
+    },
+    {
+      "Category": "Make up",
+      "Type": "Son màu",
+      "name": "Son YSL màu 13 Le Orange",
+      "inventoryNumber": 2,
+      "buyingPrice": 375,
+      "saleprice": 560
+    },
+    {
+      "Category": "Skincare",
+      "Type": "Kem dưỡng",
+      "name": "Dior Prestige Le Micro Caviar De Rose",
+      "inventoryNumber": 1,
+      "buyingPrice": 210,
+      "saleprice": 265
+    },
+    {
+      "Category": "Skincare",
+      "Type": "Dưỡng tay",
+      "name": "Dưỡng tay Caudalie",
+      "inventoryNumber": 2,
+      "buyingPrice": 95,
+      "saleprice": 135
+    },
+    {
+      "Category": "Make up",
+      "Type": "Son màu",
+      "name": "Son Mac Lady Danger Full size No Box",
+      "inventoryNumber": 1,
+      "buyingPrice": 280,
+      "saleprice": 400
+    },
+    {
+      "Category": "Make up",
+      "Type": "Son màu",
+      "name": "Son Mac Velvet Teddy Full size No Box",
+      "inventoryNumber": 1,
+      "buyingPrice": 219,
+      "saleprice": 350
+    },
+    {
+      "Category": "Make up",
+      "Type": "Son màu",
+      "name": "Son Mac Chili Full size Full Box",
+      "inventoryNumber": 1,
+      "buyingPrice": 370,
+      "saleprice": 455
+    },
+    {
+      "Category": "Make up",
+      "Type": "Son màu",
+      "name": "Son Mac Marrakesh Full size Full Box",
+      "inventoryNumber": 1,
+      "buyingPrice": 370,
+      "saleprice": 445
+    },
+    {
+      "Category": "Make up",
+      "Type": "Son màu",
+      "name": "Son Mac Devoted Chili Full size Full Box",
+      "inventoryNumber": 1,
+      "buyingPrice": 390,
+      "saleprice": 480
+    }
+   ]
