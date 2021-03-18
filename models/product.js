@@ -6,10 +6,7 @@ const productSchema = new mongoose.Schema({
     avatar: String,
     name: String,
     slug: String,
-    images: {
-        type: [String],
-        default: []
-    },
+    images: Array,
     loves: Number,
     buyingPrice: Number,
     saleprice: Number,
@@ -21,5 +18,5 @@ const productSchema = new mongoose.Schema({
     updateDate: { type: Date, default: Date.now },
 });
 
-const product = mongoose.model("Product", productSchema);
-module.exports = product;
+const productModel = mongoose.model("Product", productSchema);
+module.exports = { productSchema, productModel };

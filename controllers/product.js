@@ -1,4 +1,4 @@
-let productModel = require('../models/product');
+let { productModel } = require('../models/product');
 
 const getProduct = async (req, res) => {
     const { pageIndex = 1, pageSize = 1, name = '' } = req.query;

@@ -11,6 +11,8 @@ const ConfigRouter = (app) => {
     const categoryRoute = require('./admin/category');
     const typeRoute = require('./admin/type');
     const productRoute = require('./admin/product');
+    const orderRoute = require('./admin/order');
+    const customerRoute = require('./admin/customer');
 
     const listRouteBO = [
         userRoute,
@@ -20,7 +22,9 @@ const ConfigRouter = (app) => {
         // xing beauty
         categoryRoute,
         typeRoute,
-        productRoute
+        productRoute,
+        customerRoute,
+        orderRoute
     ];
 
 
