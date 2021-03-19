@@ -12,6 +12,10 @@ const orderSchema = new mongoose.Schema({
     list: Array,
     totalAmount: Number,
     profitAmount: Number,
+    status: {
+        type: Boolean,
+        default: false
+    },
     createDate: { type: Date, default: Date.now },
     updateDate: { type: Date, default: Date.now }
 });

@@ -4,13 +4,19 @@ let { productModel } = require('../models/product');
 
 
 const getOrder = async (req, res) => {
-    const { pageIndex = 1, pageSize = 1, name = '' } = req.query;
+    const { pageIndex = 1, pageSize = 1, name = '', status } = req.query;
     try {
         let order;
         const request = {}
 
         if (name) {
             request.name = new RegExp(name, 'i');
+        }
+
+        if (status === '1') {
+            request.status = true;
+        } else if (status === '0') {
+            request.status = false;
         }
 
         if (
@@ -95,19 +101,27 @@ const updateOrder = async (req, res) => {
         _id,
         name,
         address,
-        customerInfo,
-        list,
-        totalAmount,
-        profitAmount
+        customerInfo
     } = req.body;
 
     const item = await orderModel.findById(_id);
     item.name = name;
     item.address = address;
     item.customerInfo = customerInfo;
-    item.list = list;
-    item.totalAmount = totalAmount;
-    item.profitAmount = profitAmount;
+    item.save();
+
+    res.status(200).send('Cập nhật thành công');
+}
+
+
+const updateStatusOrder = async (req, res) => {
+    const {
+        _id,
+        status
+    } = req.body;
+
+    const item = await orderModel.findById(_id);
+    item.status = status;
     item.save();
 
     res.status(200).send('Cập nhật thành công');
@@ -132,5 +146,6 @@ module.exports = {
     getOrderById,
     getOrder,
     updateOrder,
-    deleteOrder
+    deleteOrder,
+    updateStatusOrder
 };
