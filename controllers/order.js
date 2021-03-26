@@ -1,10 +1,8 @@
 let orderModel = require('../models/order');
 let { productModel } = require('../models/product');
 
-
-
 const getOrder = async (req, res) => {
-    const { pageIndex = 1, pageSize = 1, name = '', status } = req.query;
+    const { pageIndex = 1, pageSize = 1, name = '', status, from, to } = req.query;
     try {
         let order;
         const request = {}
@@ -17,6 +15,17 @@ const getOrder = async (req, res) => {
             request.status = true;
         } else if (status === '0') {
             request.status = false;
+        }
+
+        if (from && to) {
+            const dateFrom = new Date(from);
+            dateFrom.setHours(0,0,0,0);
+            const dateTo = new Date(to);
+            dateTo.setHours(23,59,59,999);
+            request.createDate = {
+                $gte: dateFrom,
+                $lt: dateTo
+            }
         }
 
         if (
@@ -129,8 +138,17 @@ const updateStatusOrder = async (req, res) => {
 
 const deleteOrder = async (req, res) => {
     const {
-        _id
+        _id,
+        list
     } = req.body;
+
+    if (list && list.length > 0) {
+        for (const iterator of list) {
+            const product = await productModel.findById(iterator._id);
+            product.inventoryNumber += Number(iterator.quantity);
+            product.save();
+        }
+    }
 
     orderModel.findByIdAndDelete(_id, (err) => {
         if (err) {

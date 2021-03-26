@@ -13,6 +13,7 @@ const ConfigRouter = (app) => {
     const productRoute = require('./admin/product');
     const orderRoute = require('./admin/order');
     const customerRoute = require('./admin/customer');
+    const reportRoute = require('./admin/report');
 
     const listRouteBO = [
         userRoute,
@@ -24,7 +25,8 @@ const ConfigRouter = (app) => {
         typeRoute,
         productRoute,
         customerRoute,
-        orderRoute
+        orderRoute,
+        reportRoute
     ];
 
 
