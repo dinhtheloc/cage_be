@@ -16,12 +16,15 @@ const getTrendingProducts = async (req, res) => {
         }]).exec();
     const dataTrendingProducts = [];
 
+    sumProfit = 0;
+
     if (data && data.length > 0) {
         for (const iterator of data) {
             const { _id, count } = iterator;
             const product = await productModel.findById(_id).exec();
 
-            profitAmount = (product.saleprice * count) - (product.buyingPrice * count)
+            profitAmount = (product.saleprice * count) - (product.buyingPrice * count);
+            sumProfit += profitAmount;
 
             dataTrendingProducts.push({
                 product,
@@ -31,11 +34,13 @@ const getTrendingProducts = async (req, res) => {
         }
         dataTrendingProducts.sort((a, b) => (a.count > b.count) ? -1 : ((b.count > a.count) ? 1 : 0))
         res.json({
-            dataTrendingProducts
+            dataTrendingProducts,
+            sumProfit
         });
     } else {
         res.json({
-            dataTrendingProducts
+            dataTrendingProducts,
+            sumProfit
         });
     }
 
@@ -50,6 +55,10 @@ const getRankCustomers = async (req, res) => {
                 count: { $sum: 1 }
             }
         }]).exec();
+
+    const countCustomer = await customerModel.countDocuments();
+
+
     const dataRankCustomers = [];
 
     if (data && data.length > 0) {
@@ -66,17 +75,92 @@ const getRankCustomers = async (req, res) => {
         }
         dataRankCustomers.sort((a, b) => (a.count > b.count) ? -1 : ((b.count > a.count) ? 1 : 0))
         res.json({
-            dataRankCustomers
+            dataRankCustomers,
+            countCustomer
         });
     } else {
         res.json({
-            dataRankCustomers
+            dataRankCustomers,
+            countCustomer
         });
     }
 
 }
 
+const getReportOrder = async (req, res) => {
+    const dataTrue = await orderModel.aggregate([
+        {
+            $match: {
+                status: true
+            }
+        }
+    ]).exec();
+    const dataFalse = await orderModel.aggregate([
+        {
+            $match: {
+                status: false
+            }
+        }
+    ]).exec();
+
+    const countTrue = dataTrue.length;
+    const countFalse = dataFalse.length;
+
+    res.json({
+        countTrue,
+        countFalse
+    });
+}
+
+const getDataChart = async (req, res) => {
+    const {
+        fromDate,
+        toDate
+    } = req.body;
+
+    const daylist = getDaysArray(new Date(fromDate), new Date(toDate));
+    daylist.map((v) => v.toISOString().slice(0, 10)).join("")
+
+    const result = [];
+
+    if (daylist && daylist.length > 0) {
+        for (const iterator of daylist) {
+            const request = {}
+            const dateFrom = new Date(iterator);
+            dateFrom.setHours(0, 0, 0, 0);
+            const dateTo = new Date(iterator);
+            dateTo.setHours(23, 59, 59, 999);
+
+            request.createDate = {
+                $gte: dateFrom,
+                $lt: dateTo
+            }
+            const count = await orderModel.countDocuments(request);
+
+            result.push({
+                value: count,
+                label: dateFrom
+            })
+        }
+    }
+
+    // orderModel
+    res.json({
+        result
+    });
+}
+
+const getDaysArray = function (start, end) {
+    for (var arr = [], dt = new Date(start); dt <= end; dt.setDate(dt.getDate() + 1)) {
+        arr.push(new Date(dt));
+    }
+    return arr;
+};
+
+
 module.exports = {
     getTrendingProducts,
-    getRankCustomers
+    getRankCustomers,
+    getReportOrder,
+    getDataChart
 };
