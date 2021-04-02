@@ -48,7 +48,7 @@ const getProductById = async (req, res) => {
     }
 }
 
-const createProduct = async (req, res) => {
+const createProduct = async (req, res, next) => {
     const {
         categoryId,
         typeId,
@@ -76,6 +76,7 @@ const createProduct = async (req, res) => {
         loves,
         buyingPrice,
         saleprice,
+        inventoryNumber,
         shortDescription,
         description,
         isActive
@@ -83,8 +84,7 @@ const createProduct = async (req, res) => {
 
     productModel.create({ ...bodyCreate }, (error, data) => {
         if (error) {
-            res.status(500).send('Hệ thống gặp lỗi');
-            return;
+            next(error);
         } else {
             res.status(200).send('Tạo mới thành công');
         }

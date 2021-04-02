@@ -11,9 +11,8 @@ const Mongodb = function () {
         error => {
             console.log('Database could not be connected : ' + error);
         }
-    )
-
-
+    );
+    mongoose.set('useCreateIndex', true);
 }
 
 module.exports = Mongodb;

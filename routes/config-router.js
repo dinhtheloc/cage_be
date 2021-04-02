@@ -15,6 +15,9 @@ const ConfigRouter = (app) => {
     const customerRoute = require('./admin/customer');
     const reportRoute = require('./admin/report');
 
+    const errorController = require('../controllers/errorController');
+
+
     const listRouteBO = [
         userRoute,
         postRoute,
@@ -33,6 +36,9 @@ const ConfigRouter = (app) => {
     app.use('/api', authenticateToken, listRouteBO);
     app.use('/', authRoute);
     app.use('/api-blog', blogArticleRoute);
+
+    app.use(errorController);
+
 }
 
 

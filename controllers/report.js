@@ -122,6 +122,8 @@ const getDataChart = async (req, res) => {
     daylist.map((v) => v.toISOString().slice(0, 10)).join("")
 
     const result = [];
+    let totalProfit = 0;
+    let totalCount = 0;
 
     if (daylist && daylist.length > 0) {
         for (const iterator of daylist) {
@@ -135,7 +137,16 @@ const getDataChart = async (req, res) => {
                 $gte: dateFrom,
                 $lt: dateTo
             }
-            const count = await orderModel.countDocuments(request);
+            const data = await orderModel.find(request);
+            const count = data.length;
+
+            if (count > 0) {
+                totalCount += count;
+
+                for (const iterator2 of data) {
+                    totalProfit += iterator2.profitAmount;
+                }
+            }
 
             result.push({
                 value: count,
@@ -146,7 +157,9 @@ const getDataChart = async (req, res) => {
 
     // orderModel
     res.json({
-        result
+        result,
+        totalProfit,
+        totalCount
     });
 }
 

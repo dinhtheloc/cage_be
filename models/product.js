@@ -4,7 +4,11 @@ const productSchema = new mongoose.Schema({
     categoryId: String,
     typeId: String,
     avatar: String,
-    name: String,
+    name: {
+        type: String,
+        unique: [true, 'Tên sản phẩm đã được sử dụng.'],
+        required: [true, 'Tên sản phẩm là trường bắt buộc.']
+    },
     slug: String,
     images: Array,
     loves: Number,
