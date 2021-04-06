@@ -133,5 +133,5 @@ app.get('*', (req, res) => {
 
 
 
-server.listen(process.env.PORT || 3001, () => console.log(`Server has started.`));
+server.listen(process.env.PORT || 3001, () => console.log(`Server has started.` + process.env.PORT));
 
