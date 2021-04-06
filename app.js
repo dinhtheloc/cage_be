@@ -25,7 +25,7 @@ app.use(bodyParser.json());
 // Put these statements before you define any routes.
 app.use(bodyParser.urlencoded({ extended: true }));
 
-dotenv.config();
+dotenv.config({ path: path.join(__dirname, '.env') });
 
 ConfigPassport(app);
 ConfigMongodb();
