@@ -9,8 +9,8 @@ const ConfigRouter = require('./routes/config-router');
 const app = require('express')();
 
 const express = require('express');
-const path = require('path');
-require('dotenv').config({ path: path.join(__dirname, '.env') });
+const path = require('path'); 
+require('dotenv').config({ path: path.join(__dirname, '../.env') });
 
 const server = http.createServer(app);
 // const io = socketio(server, {
