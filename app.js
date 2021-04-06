@@ -13,12 +13,12 @@ const express = require('express');
 const path = require('path');
 
 const server = http.createServer(app);
-const io = socketio(server, {
-    cors: {
-        origin: "http://localhost:3000",
-        methods: ["GET", "POST"]
-    }
-});
+// const io = socketio(server, {
+//     cors: {
+//         origin: "http://localhost:3000",
+//         methods: ["GET", "POST"]
+//     }
+// });
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -29,7 +29,7 @@ dotenv.config();
 
 ConfigPassport(app);
 ConfigMongodb();
-ConfigSocketChat(io);
+// ConfigSocketChat(io);
 
 ConfigRouter(app);
 
