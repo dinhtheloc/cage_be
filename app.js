@@ -1,6 +1,5 @@
 const cors = require('cors');
 const bodyParser = require('body-parser');
-const dotenv = require('dotenv');
 const http = require('http');
 const socketio = require('socket.io');
 const ConfigPassport = require('./config/passport');
@@ -11,6 +10,7 @@ const app = require('express')();
 
 const express = require('express');
 const path = require('path');
+require('dotenv').config({ path: path.join(__dirname, '.env') });
 
 const server = http.createServer(app);
 // const io = socketio(server, {
@@ -24,8 +24,6 @@ app.use(cors());
 app.use(bodyParser.json());
 // Put these statements before you define any routes.
 app.use(bodyParser.urlencoded({ extended: true }));
-
-dotenv.config({ path: path.join(__dirname, '.env') });
 
 ConfigPassport(app);
 ConfigMongodb();
