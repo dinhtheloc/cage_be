@@ -73,7 +73,7 @@ const getRankCustomers = async (req, res) => {
                 count
             });
         }
-        dataRankCustomers.sort((a, b) => (a.count > b.count) ? -1 : ((b.count > a.count) ? 1 : 0))
+        dataRankCustomers.sort((a, b) => (a.totalAmount > b.totalAmount) ? -1 : ((b.totalAmount > a.totalAmount) ? 1 : 0))
         res.json({
             dataRankCustomers,
             countCustomer

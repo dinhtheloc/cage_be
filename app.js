@@ -78,8 +78,8 @@ app.get('*', (req, res) => {
 //     return slug;
 // }
 
-// const data = require('./dataProduct');
-// const productModel = require('./models/product');
+// const data = require('./dataProduct2');
+// const {productModel} = require('./models/product');
 
 // const arrayData = [];
 
@@ -120,8 +120,9 @@ app.get('*', (req, res) => {
 //     arrayData.push(bodyCreate);
 // });
 
+// console.log(arrayData);
 
-// // import data
+// import data
 
 // productModel.insertMany(arrayData, function(error, docs) {
 //     console.log('error', error);
