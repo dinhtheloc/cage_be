@@ -10,8 +10,7 @@ const app = require('express')();
 
 const express = require('express');
 const path = require('path'); 
-require('dotenv').config({ path: path.join(__dirname, '../.env') });
-
+require('dotenv').config({ path: path.join(__dirname, './.env') });
 const server = http.createServer(app);
 // const io = socketio(server, {
 //     cors: {
@@ -19,6 +18,8 @@ const server = http.createServer(app);
 //         methods: ["GET", "POST"]
 //     }
 // });
+
+
 
 app.use(cors());
 app.use(bodyParser.json());
