@@ -34,7 +34,7 @@ const getType = async (req, res) => {
     }
 }
 
-const createType = async (req, res) => {
+const createType = async (req, res, next) => {
     const {
         name,
         isActive
@@ -50,7 +50,7 @@ const createType = async (req, res) => {
 
     typeModel.create({ ...bodyCreate }, (error, data) => {
         if (error) {
-            res.status(500).send('Hệ thống gặp lỗi');
+            next(error);
             return;
         } else {
             res.status(200).send('Tạo mới thành công');
@@ -74,6 +74,20 @@ const updateType = async (req, res) => {
     item.updateDate = new Date();
     item.save();
     res.status(200).send('Cập nhật thành công');
+}
+
+const deleteType = async (req, res, next) => {
+    const {
+        _id
+    } = req.body;
+
+    typeModel.findByIdAndDelete(_id, (err) => {
+        if (err) {
+            next(err);
+            return;
+        }
+        res.status(200).send('Xóa thành công ' + _id);
+    });
 }
 
 
@@ -111,5 +125,6 @@ function ChangeToSlug(name) {
 module.exports = {
     createType,
     getType,
+    deleteType
     // updateType
 };

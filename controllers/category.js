@@ -34,7 +34,7 @@ const getCategory = async (req, res) => {
     }
 }
 
-const createCategory = async (req, res) => {
+const createCategory = async (req, res, next) => {
     const {
         name,
         isActive
@@ -50,7 +50,7 @@ const createCategory = async (req, res) => {
 
     categoryModel.create({ ...bodyCreate }, (error, data) => {
         if (error) {
-            res.status(500).send('Hệ thống gặp lỗi');
+            next(error);
             return;
         } else {
             res.status(200).send('Tạo mới thành công');
@@ -79,19 +79,19 @@ const updateCategory = async (req, res) => {
 }
 
 
-// const deleteArticle = async (req, res) => {
-//     const {
-//         _id
-//     } = req.body;
+const deleteCategory = async (req, res, next) => {
+    const {
+        _id
+    } = req.body;
 
-//     article.findByIdAndDelete(_id, (err) => {
-//         if (err) {
-//             res.status(500).send('Hệ thống gặp lỗi');
-//             return;
-//         }
-//         res.status(200).send('Xóa thành công ' + _id);
-//     });
-// }
+    categoryModel.findByIdAndDelete(_id, (err) => {
+        if (err) {
+            next(err);
+            return;
+        }
+        res.status(200).send('Xóa thành công ' + _id);
+    });
+}
 
 
 function ChangeToSlug(name) {
@@ -128,5 +128,6 @@ function ChangeToSlug(name) {
 module.exports = {
     createCategory,
     getCategory,
-    updateCategory
+    updateCategory,
+    deleteCategory
 };
